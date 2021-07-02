@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이름으로 학번 검색</title>
+    <script>
+        function search(){
+            if(!window.sessionStorage){alert("지원하지 않습니다."); return;}
+            /* window 세션스토리가  안되면 alert 띄우고 리턴 없음 */
+            var name = document.getElementById("name").value;
+            /* name의 벨류값을 name에 넣음  */
+            var sid = sessionStorage.getItem(name);
+            /* sid에 ssesionStorage 의 네임의 아이템값을 갖고옴 */
+            if(sid == null){
+                /* sid가 업으면 하단꺼 출력 */
+                alert(name+ " 학생이 없습니다.");return;
+            }
+
+            document.getElementById("sid").value = sid;
+            /* sid의 벨류를 sid에 넣음  */
+        }
+    </script>
+</head>
+<body>
+  <h3>이름으로 학번 검색</h3><hr>
+  <form>
+      <label>검색할 이름 <input id="name" type="text" size="10"></label>
+      <br>
+      <label>검색된 화면 <input id="sid" type="text" size="10"></label>
+      <input type="button" value="스토리지에서 검색" onclick="search()">
+  </form>
+  <br>
+  <a href="prac12-01-store.html">이름과 학번 저장 페이지로</a>
+</body>
+</html>

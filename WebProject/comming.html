@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>페이지 제작</title>
+<link rel="stylesheet" href="css/style5.css">
+</head>
+<body>
+	<!-- header -->
+	<header>
+		<div class="container">
+			<div class="logo"><a href="index.html"><img src="image/mouse.png"></a></div>
+			<ul class="sidemenu">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#">Sitemap</a></li>
+			</ul>
+		</div>
+	</header>
+	<!-- //header -->
+ 
+
+<!-- nav --------------------------------------------- -->
+	<nav>
+		<div class="container">
+			<ul class="leftMenu">
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="galary.html">갤러리</a></li>
+				<li class="dropBox">
+					<a href="board.html">게시판</a> 
+					<span class="dropmenu"> 
+						<span><a href="board.html">자유 게시판</a></span> 
+						<span><a href="board2.html">문의 게시판</a></span> 
+						<span><a href="board3.html">건의 게시판</a></span>
+					</span>
+				</li>
+				<li class="dropBox">
+					<a href="music.html">멀티미디어</a> 
+					<span class="dropmenu"> 
+						<span><a href="music.html">음악듣기</a></span> 
+						<span><a href="video.html">동영상보기</a></span> 
+					</span>
+				</li>
+				<li><a href="store.html">상품구매</a></li>
+				<li><a href="comming.html">찾아오시는길</a></li>
+			</ul>
+			<ul class="rightMenu">
+				<li><a href="join.html">회원가입</a></li>
+				<li><a href="login.html">로그인</a></li>
+			</ul>
+		</div>
+	</nav>
+    <section id="comming">
+		<!-- 찾아 오신느 길  -->
+        <div id="logo">
+            <pre>
+
+                                Address        서울시 관악구 남부순환로 1811
+
+                                Subway         2호선 서울대입구역 5번 출구 도보 1분
+
+                                TEL            010-3151-5947
+                                FAX            02-877-4140
+     
+		</pre>
+		<!-- 지도 불러오는 과정  -->
+<!-- * 카카오맵 - 지도퍼가기 -->
+<!-- 1. 지도 노드 -->
+<div id="daumRoughmapContainer1605602920695" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+<!--
+	2. 설치 스크립트
+	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+-->
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+<!-- 3. 실행 스크립트 -->
+<script charset="UTF-8">
+	new daum.roughmap.Lander({
+		"timestamp" : "1605602920695",
+		/* 맵 위치 */
+		"key" : "22yqs",
+		/* 키값  */
+		"mapWidth" : "1000",
+		/* 지도 가로 */
+		"mapHeight" : "400"
+		/* 지도 세로  */
+	}).render();
+</script>
+
+        </div>
+ 
+     </section>
+	<!-- footer -->
+	<footer>
+		<div class="top">
+			<div class="container">
+				<span>다운로드</span> <span>개인정보처리방침</span> <span>저작권지침및신고</span> <span>이메일무단수집거부</span>
+			</div>
+		</div>
+		<div class="container">
+            <strong>
+                Home : Location Log : Tag Log : Media Log : Guestbook : Admin : New Post
+            </strong>
+            <div class="copyright">
+                COPYRIGHT Ⓒ cita's BLOG IS POWERED BY DAUM / DESIGNED BY TISTORY
+            </div>
+        </div>
+	</footer>
+	<!-- //footer -->
+	<script src="js/app.js"></script>
+</body>
+</html>

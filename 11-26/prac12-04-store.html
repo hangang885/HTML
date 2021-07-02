@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일기 쓰기</title>
+    <script>
+        function store() {
+            if(!window.localStorage) { alert("지원하지 않습니다."); return;}
+            var date = document.getElementById("date").innerHTML;
+            var memo = document.getElementById("memo").value;
+            localStorage.setItem(date, memo);
+            /* 로컬스토로지에 위에서 받아온 값을 넣음  */
+        }
+
+        function view() {
+            var win = window.open("prac12-04-view.html", "viewwin");
+            /* 다른페이지 여는 부분 */
+        }
+
+        function printDate() {
+            var span = document.getElementById("date");
+            var today = new Date();
+            var str = today.getFullYear() + "."
+                    + (today.getMonth()+1) + "."
+                    + today.getDate();
+                    /* str에 날짜를 나눠서 받아놓음 */
+            span.innerHTML = str;
+            /* 출력부분 */
+        }
+    </script>
+    <style>
+        textarea {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body onload = "printDate();">
+    
+    <h3>일기쓰기</h3><hr>
+    <form>
+        <div>오늘 <span id="date"></span></div>
+        <textarea id="memo" cols="50" rows="10"></textarea>
+        <br>
+        <input type="button" value="저장" onclick="store()">
+        <input type="button" value="보기" onclick="view()">
+    </form>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!-- 자바스크립트 코드는 브라우저로부터 3 가지 유형의 객체를 제공받아
+활용 할 수 있다.
+1. bom 객체, 2. 코어객체(Array,Date등),3. Html Dom 객체
+HTML DOM(간단히 DOM)
+웹 페이지에 작성된 HTML 태그 당 객체(DOM 객체) 생성
+목적
+HTML 태그가 출력된 모양이나 콘텐츠를 제어하기 위해
+DOM 객체를 통해 각 태그의 CSS3 스타일 시트 접근 및 변경
+HTML 태그에 의해 출력된 텍스트나 이미지 변경
+DOM 트리
+HTML 태그의 포함관계에 따라 DOM 객체의 트리(tree) 생성
+DOM 트리는 부모 자식 관꼐
+DOM 객체
+DOM 트리의 한 노드
+HTML 태그 당 하나의 DOM 객체 생성
+DOM 노드(Node), DOM 엘리먼드(Element) 라고도 불림
+
+DOM 트리의 특징
+DOM 트리의 루트는 document 객체
+DOM 객체의 종류는 HTML 태그 종류만큼
+HTML 태그 당 DOM 객체가 하나 씩 생성
+HTML 태그의 포함 관계에 따라 DOM 트리에 부모 자식 관꼐
+
+브라우저가 HTML 태그를 화면에 그리는 과정
+1. 브라우저가 DOM 태그의 틀(document 객체) 생성
+2. 브라우저가 HTML 태그를 읽고 DOM 트리에 DOM 객체 생성
+3. 브라우저는 DOM 객체를 화면에 출력
+4. HTML 문서 로딩이 완료되면 DOM 트리 완성
+5. DOM 객체 변경 시, 브라우저는 해당 HTML 태그의 출력 모양을 바로 갱신
+
+HTML 태그
+엘리먼트 (element)로도 불림
+다음 5 가지 요소로 구성
+엘리먼트 이름
+속성
+CSS3 스타일
+이벤트 리스너
+콘텐츠 (innerHTML)
+<p 태그이름 속성 CSS스타일 이벤트 리스너>
+        이것은<span style="color:red">문장입니다</span>
+        //콘텐츠 innerHTML이다.
+</p>
+
+DOM 객체는 5 개의 요소 구성
+1. 프로퍼티(property)
+HTML 태그의 속성(attribute) 반영
+2. 메소드(method)
+DOM 객체의 멤버 함수로서, HTML 태그 제어 가능
+3. 컬렉션 (collection)
+자식 DOM 객체들의 주소를 가지는 등 배열과 비슷한 집학적 정보
+4. 이벤트 리스너(event listener)
+HTML 태그에 작성된 이벤트 리스너 반영
+약 70여개의 이벤트 리스너를 가질 수 있음
+5. CSS3 스타일
+HTML 태그에 설정된 CSS3 스타일 시트 정보를 반영
+DOM 객체의 style 프로퍼티를 통해 HTML 태그의 모양 제어 가능
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <title>HTML DOM x릐</title>
+ </head>
+ <body>
+     <h3>DOM 객체 p의 프로퍼티, 스타일, 이벤트 리스너</h3><hr>
+     <p id="firstP" style="color:blue; background: yellow"
+     onclick="this.style.color='tead'">이것은
+     <span style="color: red">문장입니다.</span>
+    </p>
+    <script>
+        var p = document.getElementById("firstP");
+        var text = "p.id = "+p.id +"\n";
+        text += "p.tagName ="+p.tagName+"\n";
+        text += "p.innerHTML ="+p.innerHTML+"\n";
+        text += "p.style.color ="+p.style.color+"\n";
+        text += "p.onclick ="+p.onclick+"\n";
+        text += "p.childElementCount ="+p.childElementCount+"\n";
+        text += "너비 ="+p.offsetWidth+"\n";
+        text += "높이 ="+p.offsetHeight+"\n";
+        alert(text);
+    </script>
+     
+ </body>
+ </html><!-- 
+ DOM 객체 구분, id 태그 속성
+ <p id="firstP">안녕하세요</p>
+ DOM 객체 찾기, document.getElementByID()
+ var p = document.getElementByID("firstP"); // id값이 firstP인 DOM 객체 리턴
+ p.style.color = "red";
+
+ DOM 객체의 CSS3 스타일 동적 변경
+ CSS3 스타일 프로퍼티는 다음과 같이 사용
+ background-color 스타일 프로퍼티 ->background-color
+ font-size 스타일 프로퍼티 -> fontSize
+ <span id="mySpan" style="color: red">문장입니다.</span>
+ var span = document.getElementById("mySpan") //id가 mySpan인 객체 찾기
+ span.style.color="green"; // '문장입니다' 의 글자 색을 green으로 변경
+ span.style.fontSize="30px"l //'문장입니다'의 폰트를 30px크기로 변경
+ span.style.border= "3px dotted magenta"; //3픽셀의 magenta 점선 테두리 -->

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 맵</title>
+
+<style>
+    a{
+        text-decoration: none
+    }
+</style>
+</head>
+<!--글자 색상 속성 => color : red;
+    글자 꾸밈 속성 => text-decoration : none
+    글자 크기 속성 => font-size: 1.5em
+    글자 굵기 속성 => font-weight: bold
+    배경 색상 속성 => background:#eee;-->
+<body>
+    <img src="images/kids.jpg" alt="" usemap="#favorites">
+    <map name="favorites">
+        <area shape="rect" coords="10,10,160,200" href="http://cafe.naver.com"
+            target="_blank" alt="html5 네이버 카페로 가기">
+           <area shape="rect" coords="220,10,380,200" href="http://www.facebook.com" 
+           target="_blank" alt="html5 페이스북 페이지로 가기"> 
+
+    </map>
+
+</body>
+</html>

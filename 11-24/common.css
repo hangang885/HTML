@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+* {/* 모든 것에 스타일 적용*/
+	margin : 0 auto;
+	color : #333333;
+}
+
+body {/* body 에 스타일 적용 */
+	font-family : "나눔바른고딕", sans-serif;
+}
+
+ul {/* ul에 스타일 적용 */
+	padding : 0;
+}
+
+ul>li {/* ul의 자식 li에 적용 */
+	list-style : none;
+}
+
+a {/*a에 적용 */
+	text-decoration : none;
+	color : inherit;
+}
+
+.header_cover {/* header_cover 클래스에 적용 */
+	width : 100%;
+	height : 100px;
+	border-bottom : 1px solid #fff;
+	position : relative;
+	z-index : 50;
+}	
+
+.header_cover:hover {/* heade_cover 클래스의 가상선택자에 적용 마우스 올릴때 */
+	background-color : #ffffff;
+	background-color: rgba( 255, 255, 255, 0.5 );
+	border-bottom : 1px solid #bfa586;
+}
+
+.header_cover:hover .main>li>a {
+	/* header_cover의 가상선택자의 하위 main클래스의 자식 li의 자식 a에 적용  */
+	color : #666;
+	
+}
+
+
+.header_cover:hover>header>h1>a {
+	/* header_cover클래스의 가상선택자의 자식 header의 자식 h1의 a 태그에 적용  */
+	background-image : url('logo2.png');
+}
+
+header {
+	/* header 에 적용 */
+	width : 1400px;
+	height : 100px;
+}
+
+
+header:after {/* header태그 다음위지에 넣음  */
+	content : "";
+	display : block;
+	clear : both;
+}
+
+header>h1 {
+	/* header태그의 자식 h1에 적용  */
+	width : 400px;
+	float : left;
+	margin-top : 25px;
+}
+
+header>h1>a {
+	/* header 자식의 h1의 자식 a에 적용  */
+	display : block;
+	width : 200px;
+	height : 50px;
+	background-image : url('logo2.png');
+}
+
+header>nav {
+	/* header 자식의 nav 에 적용  */
+	width : 1000px;
+	float : left;
+}
+
+.main {
+	/* main 클래스에 적용  */
+	width :600px;
+	margin-left : 250px;
+	float : left;
+	margin-top : 35px;
+}
+
+.main>li {
+	/* main클래스의 자식 li 적용 */
+	width : 150px;
+	height : 100px;
+	float : left;
+	position : relative;
+}
+
+.main>li>a {
+	/* main클래스의 자식li의 자식에게 적용  */
+	display : inline-block;
+	width : 150px;
+	height : 30px;
+	text-align : center;
+	line-height : 30px;
+	font-size : 20px;
+	color : #fff;
+}
+
+.main>li>a:hover {
+	/* main클래스의 자식 li클래스의 a태그의 가상선택자에 적용  */
+	color : #bfa586 !important;
+	/* important 나중에 설정된 값이 적용 안되게함 */
+}
+
+.add {
+	/* add클래스에 적용  */
+	color : #bfa586;
+}	
+
+.sub {
+	/* sub클래스에 적용  */
+	position : absolute;
+	width : 600px;
+	left : -75px;
+	z-index : 50;
+	margin-top : 50px;
+}
+
+.sub>li {
+	/* sub 클래스의 자식  li클래스에 적용  */
+	float : left;	
+}
+
+.sub>li>a {
+	/* sub클래스의 자식 li의 자식a에 적용  */
+	display : inline-block;
+	width : 120px;
+	height : 30px;
+	text-align : center;
+	line-height : 30px;
+}
+
+.sub>li>a:hover {
+	/* sub클래스의 자식 li의 자식 a태그의 가상 선택자에 적용  */
+	color : #bfa586;
+}
+.bg{
+	/* bg클래스에 적용  */
+	width: 2000px;
+	height: 90%;
+}
+.sub_bg {
+	/* sub_bf 클래스에 적용 */
+	width : 100%;
+	height : 1000px;
+	position : relative;
+	z-index : 49;
+	background-attachment:fixed; 
+	/* 뒷 배경을 고정시키는 내용  */
+	background-image:url('bgbg.jpg');
+
+}
+
+
+.contents {
+	/* contents클래스에 적용  */
+	
+	position : relative;	
+	background-image: url('conbjbj.jpg');
+}
+@media (max-width: 919px) {
+	/* 미디어쿼리 각기 다른 인터페이스에 적어서 하는것
+	최대가 919인경우 적용  */
+	.contents{ width: 690px; }
+	.sub_bg{ width: 690px; }
+	.header_cover{ width: 1380px; }
+	.header_cover:hover{ width: 1380px; }
+	/* 가로사이즈 적용 */
+} 
+
+/* 4줄 */
+@media (min-width: 920px) and (max-width:1149px) {
+	/* 최소 920 ~ 1149 인경우 적용*/
+	.contents { width: 920px; }
+	.sub_bg{ width: 920px; }
+	.header_cover{ width: 1380px; }
+	.header_cover:hover{ width: 1380px; }
+	/*가로사이즈 적용  */
+} 
+
+/* 5줄 */
+@media (min-width:1150px) and (max-width:1379px) {
+	/* 최소 1150~ 1379 인경우 적용 */
+	.contents { width: 1150px; }
+	.sub_bg{ width: 1150px; }
+	.header_cover{ width: 1380px; }
+	.header_cover:hover{ width: 1380px; }
+	/* 가로사이즈 적용 */
+}
+
+/* 6줄 */
+@media (min-width:1380px) {
+	/* 최소 1380 인경우  */
+	.contents { width: 1380px; }
+	.sub_bg{ width: 1380px; }
+	.header_cover{ width: 1380px; }
+	.header_cover:hover{ width: 1380px; }
+	/* 가로 사이즈 적용  */
+}
+
+.footer_cover {
+	/* footer_cover 클래스 에 적용  */
+	width : 100%;
+	height : 100px;
+	border-top : 1px solid #ccc;
+	background-color : #fff;
+	margin-top : 50px;
+}
+
+footer {
+/* footer  태그에 적용  */
+	width : 1400px;
+	height : 100px;
+	position : relative;
+}
+
+footer:after {
+	/* footer 태그 다음꺼에 적용  */
+	content : "";
+	display : block;
+	clear : both;
+}
+
+footer>h2 {
+	/* footer태그의 자식 h2에 적용  */
+	width : 300px;
+	float : left;
+	text-align : center;
+	margin-top : 28px;
+}
+
+footer>h2>a>img {
+	/* footer 태그의 자식 h2의 자식 a 의 자식 img에 적용 ㅇ */
+	width : 180px;
+	text-align : center;
+}
+
+.copy {
+	/* copy 클래스에 적용  */
+	width : 1100px;
+	height : 100px;
+	float : left;
+	font-size : 0.9em;
+	text-align : center;
+	margin-top : 20px;
+	line-height : 30px;
+}

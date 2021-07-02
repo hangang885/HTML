@@ -1,0 +1,32 @@
+<!-- 함수란 ?
+목적을 가지고 작성된 코드 블록
+데이터 전달받아 처리한 후 결과를 돌려주는 블록
+function 함수이름 (arg1, arg2, ... , argn)
+{
+    .... 프로그램 코드 ...
+    결과를 리턴하는 return 문
+} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>함수</title>
+    <script>
+        function adder(a,b){
+            //함수 작성
+            var sum;
+            sum = a+b;
+            return sum;
+        }
+    </script>
+</head>
+<body>
+
+    <h3>함수 adder()</h3>
+    <hr>
+    <script>
+        var n= adder(2456,98374); // 함수 호출
+        document.write("24567 + 98374 는 "+ n +"<br>");
+    </script>
+</body>
+</html>

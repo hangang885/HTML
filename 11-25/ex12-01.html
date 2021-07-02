@@ -1,0 +1,203 @@
+<!-- 
+초기 웹의 저장소
+    웹 서버에 저장
+        HTML 페이지, 이미지, 사용자 데이터, 웹 서비스 중간에 발생하는 일시적인 데이터
+    초기 웹 저장의 문제점
+        웹 사용의 폭발적 증가
+        웹 서버의 저장 용량에 대한 부담
+        웹 브라우저와 웹 서버 사이의 통신 트래픽 증가
+
+HTML5의 웹 저장소
+    사용자의 로컬 컴퓨터에 일부 데이터 저장
+    웹 서버의 저장 용량 및 통신 트래픽 감소
+
+저장소 종류
+    쿠키(Cookie)
+    웹 스토리지(Web Storage)
+    로컬 파일(Local File)
+    인덱스트 데이터베이스 (Indexed DB)
+    웹 서버와 연결이 끊어진 경우에도 로컬 컴퓨터에도 웹 애플리케이션 실행
+
+쿠키란?
+    웹 서버가 브라우저에게 지시하여 사용자 로컬 컴퓨터에 저장하는 4K 이하의
+    작은 데이터
+    
+쿠키의 도입 배경
+    HTTP의 통신의 기본 약점
+        브라우저와 웹서버 사이의 통신은 무상태(stateless) 프로토콜임
+        무상태 프로토콜
+        바로 이전 요청과 현재 요청이 연결되어 있음을 기억하지 않는 통신
+        예) 지금 'JAVA'를 검색하는 사용자가 바로 전에 'C++'를 검색한
+        사용자라는 사실을 모른다
+    
+    쿠키는 HTTP의 무상태 프로토콜의 약점을 보완하기 위한 도입
+
+자바스크립트 코드를 이용하여 로컬 컴퓨터에 쿠키쓰기/읽기 가능
+자바스크립트에서 쿠기 접근 : document.cookie
+윈도우에 출력된 웹 페이지를 전송한 웹 서버 모든 쿠키들이 문자혈 형태로 연결
+쿠키 쓰기
+document.cookie 에 쿠키를 문자열 형태로 달아주면 됨
+
+쿠키와 세션의 차이
+
+저장 위치
+쿠키는 클라이언트(브라우저)에 메모리 또는 파일에 저장하고,
+세션은 서버 메모리에 저장된다.
+보안
+쿠키는 클라이언트 로컬(local)에 저장되기도 하고 특히 파일로 저장되는 경우 탈취,
+변조될 위험이 있고, Rquest / Response에서 스나이핑 당할 위험이 있어
+보안이 비교적 취약하다.
+반대로 Session은 클라이언트 정보 자체는 서버에 저장되어 있으므로 비교적 안전하다.
+라이프 사이클
+쿠키는 앞서 설명한 지속 쿠키의 경우에 브라우저를 종료하더라도
+    저장되어 있을 수 있는 반면에 세션은 서버에서 만료시간/날짜를 정해서
+    지워버릴 수 있기도 하고 세션 쿠키에 세션 아이디를 정한 경우,
+    브라우저 종료시 세션아이디가 날아갈 수 있다.
+속도
+쿠키에 정보가 있기 때문에 쿠키에 정보가 있기 때문에 서버에 요청시 헤더를
+바로 참조하면 되므로 속도에서 유리하지만, 세션은 제공받은 세션아이디(Key)를
+이용해서 서버에서 다시 데이터를 참조해야하므로 속도가 비교적 느릴 수 있다.
+세션을 주로 사용하면 좋은데 왜 굳이 쿠키를 사용할까?
+-> 세션은 서버에 데이터를 저장 즉, 서버의 자원을 사용하기 때문에
+서버 자원에 한계가 있고 메모리를 사용하다 보면 속도 저하도 올 수 있기 때문이다. 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>방문 카운트 쿠키</title>
+<script>
+function GetCookie (name) {
+   var pairs = document.cookie.split(";"); // 쿠키문자열을 ;을 경계로 분할
+   /* name=value;로 기본적으로 묶여 있음  */
+
+   for(var i=0; i<pairs.length; i++) {
+      var pair = pairs[i].trim(); // 쿠키 앞뒤의 빈칸 제거
+      /* pairs[0] username = 입력값 */
+      /* trim 빈칸제거  */
+      var unit = pair.split("=");
+      /* 문자열을 분할하는 메서드 */
+      /* unit = username / 입력값  */
+      /* name = value 이런식으로 저장이 되어있어 =으로 분할해준다 */
+      if(unit[0] == name)
+      /* unit[0]이 name과 같으면  */
+         return unescape(unit[1]);
+         /* unescape()16진수로 된 것을 다시 문자로 변경  */
+   }
+   return null;
+}
+//쿠키쓰기
+function SetCookie (name, value, expireDate) {
+   var cookieStr = name + "=" + escape(value) +
+   /* escape()16진수 문자로 바꿔주는 함수 */
+        ((expireDate == null)?"":("; expires=" + expireDate.toGMTString()));
+        /* expireDate  */
+        document.cookie = cookieStr;
+        // 쿠키를 연결하는 방식으로 저장
+}
+</script></head>
+<body>
+<script>
+var username = GetCookie("username");
+/* username에 GetCookie("username")을 넣음 
+처음에는 널값이다  */
+var count = GetCookie("count");
+/* count 에 GetCookie("count")를 넣음 */
+var expire = new Date (); // 현재 시간
+if (username == null) {
+    /* 처음이거나, 이름이 정해지지 않았을때 실행 */
+   count = 0;
+   /* 카운트를 처음에 0으로 설정 해놓음*/
+   username = prompt("이름을 입력해 주십시오.","");
+   /* 유저 네임을 입력 하는 위치 */
+   if (username == null) {
+       /* 넣은 이름이 null이면 하단과 같이 출력되며 유저네임에 아무개를 넣는다. */
+       alert("이름을 입력하시면 보다 나은 서비스를 제공받을 수 있습니다.");
+       username = "아무개";
+     } else {
+         /* username이 null이 아니면 실행 */
+       expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000)); // 1년후
+       /* 기간은 1년  */
+       SetCookie("username",username,expire);
+       /* setCookie(쿠키명, 쿠키값, 만료시간, 경로, 도메인, 보안, httponly) 
+        쿠키를 username으로 설정하고 쿠키값은 username, 기간은 1년 동안  */
+
+       
+     }
+}
+count++;
+/* 실행시마다 +1을 해줌 */
+expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000)); // 1년후
+/* 1년을 설정해놓음 다시 초기화해서 */
+SetCookie("count",count,expire);
+/*  count라는 쿠키에 1씩 더해진 카운트 값을 넣고 초기화해준 1년값을 넣어준다*/
+document.write("<p>어서오십시오. "+username+"님의 "+count+"번째 방문을 환영합니다!");
+/* username 입력한 이름을 넣고 count에는 쿠키를 만들면서 1씩 더해준 count 값을 출력해줌 */
+</script>
+</body>
+</html>
+<!-- 
+   
+    username = GetCookie("username");
+    count=   GetCookie("count");
+     GetCookie 는 처음에는 실행을 하지만 설정된건 없음 
+    왜냐 아무것도 들어있지 않기에 return null을 반환함
+    expire 에 현재 시간을 넣고
+    username은 null 값이기에 if문을 실행함
+    count 값을 0으로 설정해주고
+    username의 값을 prompt를 통하여 입력값을 받음
+    혹 입력값이 없을 경우
+        alert 출력후 username에 아무개를 입력하지만 setCookie를 설정하진 않앗음
+    입력값이 있을경우
+        expire에 시간설정 현재시간 + 1년
+        setCookie에 쿠키명은 username 쿠키 값은 prompt에 입력된 값 만료시간은 현재시간 + 1년
+    그 후 if문나옴
+    count++ 을 해줌
+    expire를 한번더 설정해줌 현재시간 +1년
+    SetCookie를 해줌 count라는 쿠키명, count 는 1씩 증가한 값, 만료시간은 현재시간 + 1년
+    document.write로 출력해줌
+    
+    새로고침 후
+      username = GetCookie("username");
+    count=   GetCookie("count"); 실행해줌 
+    var pairs = document.cookie.split(";");
+    실행한 결과는 username=아까 위에서 입력한 이름;count=1 으로 설정되어있음
+    후 포문을 들어감
+    trim 변수를 사용하여 공백을 지워줌
+    후에 split 함수를 사용해서 username / 아까위에서 입력한 이름/ count / 1 
+    이렇게 4개로 나뉘어짐 
+    
+    if(unit[0] == name)
+    입력된 username 과 name 과 같기에
+    unit[1]=값은 아까 위에서 입력한 이름이다. 그래서 그 이름이 문자열로 변형된다.
+
+    그렇게  username = GetCookie("username"); 는 끝남
+    count = GetCookie("count")가 실행됨
+
+    username/ 아까위에서 입력한 이름 / count / 1 
+    위와 같이 똑같이 분할해주고 내려감
+    그 후 포문으로 들어감
+    if(unit[0] == name)은 count를 입력한거였기에 첫번째 i의 포문은
+    리턴값이 없이 위로 올라감
+    그렇게 3번째 i로 진행 되었을때
+    unit[0]은 count 이기에
+    unit[1]은 name 을 unescape내용이 실행됨
+    그렇게 밑으로 슬슬 흘러감~    
+ -->
+
+ <!-- 쿠키란 무엇인가
+쿠키는 유저들의 효율적이고 안전한 웹 사용을 보장하기 위하여 웹 사이트에 
+널리 사용되고 있습니다.
+쿠키는 웹사이트 접속시 접속자의 개인장치에 다운로드 되고
+브라우저에 저장되는 작은 텍스트 파일입니다.
+웹사이트는 쿠키를 통해 접속자의 장치를 인식하고,
+접속자의 설정과 과거 이용내역에 대한 일부 데이터를 저장합니다.
+
+일반적으로 쿠키에는 만료일이 있습니다.
+예를 들어, 브라우저를 닫는 경우 자동으로 삭제되는 쿠키도 있으며(세션 쿠키),
+일부는 수동으로 삭제되기 전까지 남아있는 등 더 오랜 기간 동안 컴퓨터에 저장되는
+쿠키도 있습니다.(지속적 쿠키).
+본 웹 사이트는 세션 및 지속적 쿠키의 사용을 통해 유저들에게 일관성 있고
+간소화된 웹 경험을 제공합니다.
+필수적인 쿠키, 기능 쿠키, 성능 쿠키, 마케팅 쿠키가 있다.-->

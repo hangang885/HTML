@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>미니 프로젝트</title>
+<!-- Bootstrap CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<!-- 부트스트랩 부분 불러오는 부분 4.1.0인거보니 최신버전  -->
+
+</head>ㅓ
+<body>
+
+<!-- 상단 메뉴 부분 -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top shadow-lg">
+	<!--navbar-expand-md 중간 크기 화면 배경어두워 네비게이면바 글씨 검정 위에 고정
+	shadow-lg 큰 그림자    -->
+	<a class="navbar-brand" href="index.html">CitaCampus</a>
+	<!-- 회사, 제품 또는 프로젝트 이름에 적합합니다. -->
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navMenu">
+					<!-- navbar-toggler 접기 플러그인과 기타 내비게이션 토글링 동작에 사용합니다.
+				 네비게이션 바를 스르륵 무너진다   -->
+		<span class="navbar-toggler-icon"></span>   
+		<!-- 네비게이션바 토글 아이콘  -->     
+	</button>
+	<div class="collapse navbar-collapse" id="navMenu">
+		<!-- 스르륵 무너지는 네비게이션바 -->
+		<ul class="navbar-nav">
+			<!-- 네비게이션 바  -->
+			<li class="nav-item">
+				<!-- 네비게이션 아이템  -->
+				<a href="board_main.html" class="nav-link">자유게시판</a>
+				<!-- 네비게이션 링크 -->
+			</li>
+			<li class="nav-item">
+				<!-- 네비게이션 아이템  -->
+				<a href="board_main.html" class="nav-link">유머게시판</a>
+					<!-- 네비게이션 링크 -->
+			</li>
+			<li class="nav-item">
+				<!-- 네비게이션 아이템  -->
+				<a href="board_main.html" class="nav-link">정치게시판</a>
+					<!-- 네비게이션 링크 -->
+			</li>
+			<li class="nav-item">
+				<!-- 네비게이션 아이템  -->
+				<a href="board_main.html" class="nav-link">스포츠게시판</a>
+					<!-- 네비게이션 링크 -->
+			</li>
+		</ul>
+		
+		<ul class="navbar-nav ml-auto">
+			<!-- 네비게이션바 마진 오토  -->
+			<li class="nav-item">
+				<!-- 네비게이션 아이템  -->
+				<a href="login.html" class="nav-link">로그인</a>
+				<!-- 네비게이션 링크 -->
+			</li>
+			<li class="nav-item">
+				<!-- 네비게이션 아이템  -->
+				<a href="join.html" class="nav-link">회원가입</a>
+				<!-- 네비게이션 링크 -->
+			</li>
+			<li class="nav-item">
+				<!-- 네비게이션 아이템  -->
+				<a href="modify_user.html" class="nav-link">정보수정</a>
+				<!-- 네비게이션 링크 -->
+			</li>
+			<li class="nav-item">
+				<!-- 네비게이션 아이템  -->
+				<a href="index.html" class="nav-link">로그아웃</a>
+				<!-- 네비게이션 링크 -->
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container" style="margin-top:100px">
+	<!-- 컨테이너 마진 탑 100px -->
+	<div class="row">
+		<!-- 로우 -->
+		<div class="col-sm-3"></div>
+		<!-- 열 스몰사이즈 3번째 -->
+		<div class="col-sm-6">
+			<!-- 열 스몰사이즈 6번째 -->
+			<div class="card shadow">
+				<!-- 카드 그림자 -->
+				<div class="card-body">
+					<!-- 카드 바디 -->
+					<form action="modify_user.html" method="post">
+					<!-- 폼 데이터를 HTTP POST 메소드로 전송함. -->
+					<div class="form-group">
+						<!-- 폼 그룹 -->
+						<label for="user_name">이름</label>
+						<!-- 유저 네임 -->
+						<input type="text" id="user_name" name="user_name" class="form-control" value="홍길동" disabled="disabled"/>
+						<!-- 유저 네임 적는곳 수정 막아놓음 -->
+					</div>
+					<div class="form-group">
+						<!-- 유저 그룹 -->
+						<label for="user_id">아이디</label>
+						<!-- 유저 아이디 -->
+						<input type="text" id="user_id" name="user_id" class="form-control" value="abc" disabled="disabled"/>
+						<!-- 유저 아이디  수정 막아놓음-->
+					</div>
+					<div class="form-group">
+						<!-- 폼 그룹 -->
+						<label for="user_pw">비밀번호</label>
+						<!-- 유저 비밀번호 -->
+						<input type="password" id="user_pw" name="user_pw" class="form-control" value="1234"/>
+						<!-- 유저 비밀번호 벨류 1234 -->
+					</div>
+					<div class="form-group">
+						<!-- 폼 그룹 -->
+						<label for="user_pw2">비밀번호 확인</label>
+								<!-- 유저 비밀번호 2 -->
+						<input type="password" id="user_pw2" name="user_pw2" class="form-control" value="1234"/>
+						<!-- 유저 비밀번호 2 벨류 1234 -->
+					</div>
+					<div class="form-group">
+						<!-- 폼 그룹 -->
+						<div class="text-right">
+							<!-- 텍스트 오른쪽 -->
+							<button type="submit" class="btn btn-primary">정보수정</button>
+							<!-- btn - primary 버튼 스타일  -->
+						</div>
+					</div>
+					
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+		<!-- 열 스몰 사이즈 3번째  -->
+	</div>
+</div>
+
+<div class="container-fluid bg-dark text-white" style="margin-top:50px;padding-top:30px;padding-bottom:30px">
+	<!-- 컨테이너 fluid 배경 검정 글씨 하얀색  스타일은 마진 탑 50 패딩 탑 30 패딩 바텀 30   -->
+	<div class="container">
+		<p>http://www.</p>
+		<p>게시판 예제</p>
+		<p>사업자번호 : 000-111-222</p>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이름과 학번</title>
+    <script>
+        function store(){
+            if(!window.sessionStorage) { alert("지원하지 않습니다."); return;}
+            /* 윈도우 세션스토리지를 지원 안할때 출력과 리턴 없음 */
+            var name = document.getElementById("name").value;
+            /* name 아이디를 가진애꺼 name에 넣음 벨류값을 */
+            var sid = document.getElementById("sid").value;
+            /* sid 아이디를 가진애 꺼 sid에 넣음 벨류값을 */
+            sessionStorage.setItem(name,sid);
+            /* 세션 스토리지 아이템 값을 설정해놓음 */
+        }
+    </script>
+</head>
+<body>
+    <h3>이름과 학번 입력</h3><hr>
+    <form>
+        <label>이름 <input type="text" id="name" size="10"></label>
+        <br>
+        <label>학번 <input type="text" id="sid" size="10"></label>
+        <input type="button" value="스토리지에 저장" onclick="store()">
+    </form>
+    <br>
+    <a href="prac12-01-search.html">이름으로 학번 검색</a>    
+</body>
+</html>

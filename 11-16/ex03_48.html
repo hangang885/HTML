@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON strinfy와 parse</title>
+    <script>
+        user = {
+            name : 'admin',
+            email: 'namgarambooks@naver.com',
+            phone: '032-506-3536'
+        };  
+        alert(user);
+        /* 기본적으로 자료형을 지정안해주고 만들시
+        최상위 자료형인 오브젝트로  되어있어 이렇게뜸 */
+
+        userStr = JSON.stringify(user);
+        /* userStr은 user을 문자형으로  바꿔서 값이 나온다*/
+        alert(userStr);
+
+        JSON.parse(userStr,function(key,value){
+            alert(key+" "+value);
+            /* JSON.parse는 JSON 형태로 바꾸는 메소드임
+            userStr을 변화하고 JSON.parse(text[, reviver])
+            이름, 반환값  */
+        });
+
+    
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

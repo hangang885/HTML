@@ -1,0 +1,36 @@
+<!-- 태그에 적용 가능한 스타일          우선순위
+브라우저의 디폴트 스타일                    4
+스타일 시트 파일에 선언된 스타일            3
+<style></style> 태그에 선언된 스타일        2
+style 속성에 선언된 스타일                  1
+스타일 합치기(cascading)와 오버라이딩(overriding)이란?
+태그에 적용되는 모든 스타일이 합쳐지고,
+동일한 스타일은 순위가 높은 스타일이 우선 적용되는 규칙
+
+
+
+
+<p>안녕하세요</p>의 최송 스타일 시트
+background: mistyrose;
+color : blue;
+font-size : 25px;
+    -->               
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>스타일 합치기 및 오버라이딩</title>
+        <link type="text/css" rel="stylesheet" href="external.css">
+        <style>
+            p{color : rgb(47,0,255); font-size: 12px;}
+        </style>
+    </head>
+    <body>
+        <h3>p태그에 스타일 중첩</h3> <hr>
+        <p>Hello, students!</p>
+        <p style="font-size:25px">안녕하세요 교수님!</p>
+
+    </body>
+    </html>
+    <!-- 초간단 속성 우선순위
+    1. 스타일 속성 -> style 태그 -> 외부.CSS -> 내부 디폴트 스타일 태그-->

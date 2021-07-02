@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onkeydown</title>
+    <script>
+        function calculate(e){
+            if ( e.keyCode == 13) {
+                var exp = document.getElementById("exp");
+                /* exp라는 id값을 가진 애를 exp에 넣음 */
+                var result = document.getElementById("result");
+                /* result라는 id값을 가진 애를 result에 넣음 */
+                result.value = eval(exp.value);
+                /* result value에 eval 문자열을 코드로 실행시킴 하는
+                exp.value를 넣음  */
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>계산기 만들기</h3><hr>
+    수식을 입력하고 &lt;Enter&gt;를 입력하세요.
+    <p>
+        <form>
+        식 <input type="text"id="exp" value="" onkeydown="calculate(event)"><br>
+        값 <input type="text"id="result">
+
+        </form>
+    
+    
+</body>
+</html>

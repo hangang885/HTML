@@ -1,0 +1,26 @@
+<!-- document.open()
+현재 브라우저에 출력된 HTML 콘텐츠를 지우고 새로운 HTML 페이지 시작.
+즉 document 객체에 담긴 DOM 트리를 지우고 새로 시작
+document.close()
+현재 브라우저에 출력된 HTML 페이지 완성
+더 이상 document.write() 할 수 없음
+예) // 현재 HTML 페이지의 내용을 지우고 다시 시작
+document.open();
+document.write("<html><head>...<body>안녕하세요.");
+document.write(".....");
+document.write("</body></html>");
+document.close(); 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>write()를 잘못 사용하는 예</title>
+</head>
+<body onclick="document.write('<h2>클릭되었습니다</h2>')">
+    <h3>write()를 잘못 사용하는 예</h3><hr>
+    <p>아무데나 클릭하시오.</p>
+</body>
+</html>

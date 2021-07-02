@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>window.location으로 웹 사이트 접속</title>
+<script>
+function load() {
+	var select = document.getElementById("site");
+	window.location=select.options[select.selectedIndex].value;
+    /* 윈도우 로케이션에 셀랙트 태그의 옵션인 선택된 인덱스 값을 넣겟다 */
+}
+</script>
+</head>
+<body>
+<h3>window.location으로 웹 사이트 접속</h3>
+<hr>
+사이트 선택 :
+<select id="site">
+	<option value="http://www.naver.com" selected>네이버
+	<option value="http://www.google.com">구글
+	<option value="http://www.microsoft.com">마이크로소프트
+</select>
+<p>
+<button onclick="load()">웹 사이트 접속</button>
+</body>
+</html>

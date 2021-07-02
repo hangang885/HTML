@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+    <script>
+        //이벤트를 연결합니다.
+        window.onload =  function() {
+            //변수를 선언합니다.
+            var clock = document.getElementById('clock');
+            /* clock 아이디의 값을 clock에 넣는다. */
+
+            //1초마다 함수를 실행합니다.
+            setInterval(function(){
+                /* 
+                setInterval 함수 : 일정한 시간 간격으로 작업을 수행하기 위해서 사용합니다.
+                clearInterval 함수를 사용하여 중지할 수 있습니다. 주의할 점은 일정한 시간 
+                간격으로 실행되는 작업이 그 시간 간격보다 오래걸릴 경우 문제가 발생할 수 있습니다.
+ */
+                var now = new Date();
+                /* Date로 now 에 현재시간을 불러와서 대입한다 */
+                clock.innerHTML= now.toString();
+                /* clock에 now의 값을 문자열화 해서 출력한다 */
+
+            }, 1000);
+            /* 1000 ms속도로 진행 */
+        };
+    </script>
+</head>
+<body>
+    <h1 id="clock"></h1>
+</body>
+</html>

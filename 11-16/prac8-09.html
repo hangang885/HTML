@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>라면을 끓이는 순서</title>
+    <script>
+        function addItem(parent){
+            var text = prompt("라면을 끓이는 순서를 입력하라","");
+            /* 프롬프트로 라면 끓이는 방법을 입력하라고 띄움 */
+            if(text==null || text =="")
+            /* 아무것도 안넣으면 리턴 x */
+            return;
+
+            var liObj = document.createElement("li");
+            /* li 값을 넣을 엘리먼트를 새로 만듬 */
+            liObj.innerHTML=text;
+            /* 만든 엘리먼트를 text 값 넣음 */
+            parent.appendChild(liObj);
+            
+        }
+    </script>
+</head>
+<body>
+    <h3>라면을 끓이는 순서</h3>
+    <hr>
+    <ol type="A" style="background-color: yellowgreen" onclick="addItem(this)">
+    <li>물을 끓인다.</li>
+    </ol>
+    
+</body>
+</html>

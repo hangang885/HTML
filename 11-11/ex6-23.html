@@ -1,0 +1,39 @@
+<!-- 대표적인 자바스크립트 함수
+eval() 함수
+예 ) var res= eval("2*3+4*6")l //res는 32
+parseInt() 함수
+에) var l = parsInt("32"); //32를 10진수로 변환 정수 32 리턴
+    var n = parsInt("0x32"); // 0x32를 16진수로 해석 , 정수 50리턴
+isNaN() 함수
+예 ) isNaN(32) // false 리턴
+    inNaN(32) // false 리턴  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 전역함수</title>
+    <script>
+        function evalParsIntIsNaN(){
+            var res= eval("2*3+4*6"); // res 는 32
+            document.write("eval(\"2*3+4*6\")는 32<br>");
+            var m = parseInt("32");
+            document.write("parseInt(\"32\")는"+m+"<br>");
+            var n = parseInt("0x32");
+            document.write("parseInt(\"0x32\")는"+n +"<br><br>");
+            //"hello"는 정수로 변환할 수 없으므로 parseInt("hello");는 NaN 리턴
+            n = parseInt("hello");
+            if(isNaN(n))//true
+            document.write("hello는 숫자가 아닙니다.");
+        }
+
+    </script>
+</head>
+<body>
+    <h3>eval(), parseInt(), isNaN()</h3>
+    <hr>
+    <script>
+    evalParsIntIsNaN();
+</script>
+</body>
+</html>

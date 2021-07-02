@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#out").click(function () {
+                /* out아이디 클릭시 */
+                $("img").fadeOut("slow");
+                /* img 숨김 */
+            });
+            $("#in").click(function () {
+                /* in 아이디 클릭시 */
+                $("img").fadeIn("slow");
+                /* img 보임 */
+            });
+            $("#toggle").click(function () {
+                /* 토글 아이디 클릭시 */
+                $("img").fadeToggle("slow");
+                /* img  */
+            });
+            $("#to50").click(function () {
+                /* to50 아이디 클릭시 */
+                $("img").fadeTo("slow", 0.5);
+                /* img fadeTo 투명도를 0.5 만큼 넣는  */
+            });
+            $("#to10").click(function () {
+                /* to10 아이디 클릭시 */
+                $("img").fadeTo("slow", 0.1);
+                /* img fadeTo 투명도를 0.1 만큼 넣는  */
+            });
+            $("#to100").click(function () {
+                /* to100 아이디 클릭시  */
+                $("img").fadeTo("slow", 1.0);
+                /* img fadeTo 투명도를 1.0 만큼 넣는  */
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="out">fadeOut</button>
+    <button id="in">fadeIn</button>
+    <button id="toggle">fadeToggle</button>
+    <button id="to50">opacity 50%</button>
+    <button id="to10">opacity 90%</button>
+    <button id="to100">opacity 0%</button>
+    <p></p>
+    <img name="pic1" src="pic1.jpg" />
+</body>
+
+</html>

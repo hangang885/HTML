@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        table {
+            background-color: aliceblue;
+        }
+        span {
+            border: 1px solid yellowgreen;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+        td, th {
+            padding-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>포스트잇 출력</h3><hr>
+    <script>
+        if(window.localStorage) {
+            document.write("<table>");
+            /* 윈도우 로컬스토리지가 이면 실행 */
+            for (i=0; i<localStorage.length; i++) {
+                var key = localStorage.key(i);
+                /* key에 로컬스로리지 키 i번째 값 넣음 */
+                var val = localStorage.getItem(key);
+                /* val에 로컬스토리지 키 값을 갖고옴  */
+                document.write("<tr>");
+                document.write("<td><span>" + (i+1) + "</span></td>");
+                document.write("<th>" + key + "</th>");
+                document.write("<td>" + val + "</td>");
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+        else {
+            alert("지원하지 않습니다.");
+        }
+    </script>
+</body>
+</html>

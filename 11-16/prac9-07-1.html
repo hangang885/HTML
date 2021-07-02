@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform:rotate()</title>
+    <script>
+        function rotate(obj){
+            obj.style.transform = "rotate(90deg)";
+            //30deg면 30도밖에 안되서 90deg로 바꿔야함
+        }
+    </script>
+</head>
+<body>
+    <h3>클릭하면 90도 회전합니다.</h3><hr>
+    <img src="media/spongebob.png" width="100" height="100" alt="animation"
+    onclick="rotate(this)">
+    <!-- click시 rotate 변경 -->
+    
+</body>
+</html>

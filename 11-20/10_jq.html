@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /* j쿼리 실행 */
+            var xWidth = 100;
+            /* xWidth =100 */
+            var yHeight = 100;
+            /* yHeight =100 */
+            $("div").click(function () {
+                /* div 클릭 시 실행 */
+                $(this).width(xWidth).addClass("box");
+                /* div 의 가로 xWidth으로  바꾼다 그리고 클래스를 붙인다 */
+                $(this).height(yHeight).addClass("box");
+                /* div 의 세로 를 yHeight으로 바꾼데 클래스르 붙인다. */
+                xWidth = xWidth - 10;
+                /* -10 */
+                yHeight = yHeight - 10;
+                /* -10 */
+            });
+        });
+    </script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 5px;
+            background: yellow;
+        }
+
+        .box {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>박스1</div>
+    <div>박스2</div>
+    <div>박스3</div>
+    <div>박스4</div>
+    <div>박스5</div>
+</body>
+
+</html>

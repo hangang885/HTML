@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if-else를 이용한 학점 매기기</title>
+</head>
+<body>
+    <h3>if-else를 이용한 학점 매기기</h3><hr>
+    <script>
+        var grade;
+        var score= prompt("기태 님 점수를 입력하세요.",100);
+        score = parseInt(score);
+        /* 문자열을 숫자로 바꿈 */
+        if(score>=90) //score 90이상
+        grade = "A";
+        else if(score>=80)
+        /* 80점 이상 90 미만 */
+        grade = "B";
+        else if(score>=70)
+        /* 70점 이상 80 미만 */
+        grade = "C";
+        else if(score>=60)
+        /* 60점 이상 70 미만 */
+        grade = "D";
+        else
+        /*  60 미만 */
+        grade = "F";
+        document.write(score +"는" + grade + "입니다. <br>");
+
+    </script>
+    
+</body>
+</html>
+<!-- JavaScript 정규식
+1. 한글 입력 막기
+obj.value = obj.value.replace(/[\ㄱ-하-ㅣ가-힣]/g, '');
+/부터 / 까지 있는 g: 전역매칭함
+replace를 앞에있는것과 뒤에있는것을 치환할때 사용함 
+현 상황은 한마디로 앞에 한글들을 '' 공백으로 처리하여서 한글을
+입력 막은것 
+
+2. 영문, 숫자 만 허용
+$(this).val($(this).val().replace(/[^a-zA-Z0-9]/g, ''));
+/[^a-zA-Z0-9]/ 까지에 있는것을 g로 전역매칭함 [] 안에 ^는
+[] 안에 있는것들 제외 한다는 뜻임
+replace를 사용해서 영어와 숫자가 아닌것을 공백으로 치환한다는 뜻 
+
+3. 숫자만 허용
+style= "ime-mode:disabled"
+ime-mode:disabled 는 영문, 숫자만 입력 가능하게 하기임 
+style = "ime-mode:auto"          (자동변경)  (한/영 전환 가능)
+style = "ime-mode:active"          (한글 모드)  (한/영 전환 가능)
+style = "ime-mode:inactive"      (영문 모드)  (오직 영문)
+style = "ime-mode:disabled"      (영문 모드)  (한/영 전환 가능)
+style = "ime-mode:deactivated" (한글 모드)  (한/영 전환 가능)
+그 후 키코드로 필터링해서 숫자만 쓰게 만들려고함 
+
+if (event.keyCode ==8 || event.keyCode ==9 || event.keyCode == 37
+keyCode 8은 Backspace / keyCode 9는 Tab / keyCode 37은 왼쪽 화살표
+|| event.keyCode == 39 || event.keyCode == 46){return;}
+keyCode 39는 오른쪽 화살표 / keyCode 46은 Delete 위에 것들 인것은 
+리턴 없이해서 위에것들을 안쓴다는 뜻
+
+if ((event.keyCode >= 48 && event.keyCode <= 57) || 
+keycode 48부터는 숫자가 있음 57이후부터는 숫자가 아니기에 
+48~ 57 사이의 값만 나오게할려고 and 연산해서 함 
+
+(event.keyCode >= 96 && event.keyCode <= 105)) { return true; }
+keyCode 96부터 105까지도 숫자이기에 and 연산으로묶음 
+위에 숫자 if문과 아래 문을 or 연산으로 묶어서 위에 값이거나 아래값일경우
+true로 해서 출력함
+ else { return false; }
+아닌 것들은 false로 출력 안함 
+4. 아이디 체크
+// 아이디 - 한글, 특수문자 제외
+$("#id").on("keydown", function(event){
+    keydown이나 event가 시작 되었을때 
+if (event.keyCode ==8 || event.keyCode ==9 || event.keyCode == 37
+keyCode 8은 Backspace / keyCode 9는 Tab / keyCode 37은 왼쪽 화살표
+|| event.keyCode == 39 || event.keyCode == 46){return;}
+keyCode 39는 오른쪽 화살표 / keyCode 46은 Delete 위에 것들 인것은 
+리턴 없이해서 위에것들을 안쓴다는 뜻
+
+    $(this).val($(this).val().replace(/[^a-zA-Z0-9]/g,''));
+    /부터 / 까지 있는 g: 전역매칭함
+replace를 앞에있는것과 뒤에있는것을 치환할때 사용함 
+현 상황은 한마디로 앞에 한글들을 '' 공백으로 처리하여서 한글을
+입력 막은것 
+    ]).css({"ime-mode": "disibled"});
+    위에 2개를 진행하면 특수문자/ 한글을 막은후 이다.
+    그다음 "ime-mode": "disibled" 을 진행하면 영문, 숫자만 사용 가능하다.
+
+3.1 천단위 콤마 넣기
+//콤마 찍기
+function numberFormat(num){
+    var pattern = /(-?[0-9]+)([0-9]{3})/;
+
+    (-?[0-9]+) 부분은
+    -?는 0또는 1개의 문자 매칭 해서 0 부터 9까지 숫자를 매칭한다. 
+    +는 1회이상 반복한다라는 뜻이다. 이 부분은 콤마찍기전에 앞에 숫자를 비교하는 부분
+
+    ([0-9]{3})부분은
+    0부터 9까지 매칭해서 3개를 확인한다는 뜻이다.
+
+    while (pattern.test(num)){
+        while을 돌려 num 값을 테스트 하는 부분 
+        num= num.replace(pattern, "$1,$2");
+        num을 replace로 치환하는 부분
+        pattern을 사용해서 $1 == (-?[0-9]+)  $2 == ([0-9]{3})
+        괄호로 갭처한 부분 문자열이 저장된다.
+        그래서 콤마를 찍어주는 것이다.
+    }
+    return num;
+}
+//콤마 제거
+function unNumberFormat(num){
+    콤마제거 함수 
+    retrun ( num.replace(/\,/g,""));
+    num을 replace하여 콤마를 지우는것
+    /\,/ g로 전역매칭해서 "" 으로 치환하여 콤마를 제거
+
+
+}
+최대한 조사해서 적어놓으세요!!!
+
+return;
+반환 및 종료를 뜻한다
+현재 함수를 종료하고 호출한 곳으로 이동하라
+반환 값이 있을 경우 해당되는 반환값과 함께 호출한 곳으로 이동하라
+main() 함수에서 return 문을 만나면 해당 프로그램을 종료하게 된다.
+리턴 값 0 정상종료
+       -1 에러발생
+        1 정상종료 되었으나 다른인자가 있다.
+       -2 에러발생 하였고 구체적으로 어떤 것인지 나타낸다.
+
+자바스크립트에서 return의 의미
+-return; 과 return false;는 서로 같다. return은 false를 생략한 문법이다.
+<form name='f' action = 'next.php' onSubmit="return check();" method='post'>
+    와 같이 정의해주는 게 일반적
+    return check() 라는 것은 check()함수를 호출하여 false가 리턴되면
+    폼을 전송하지 마라는 뜻입니다.
+예문 >
+function check(){
+    if(f.name.value.length<2){
+        alert('이름은 2글자 이상이어야 합니다.');
+        return false;
+    }
+    else return true;
+
+}
+이렇게 되어 있다고 했을 때,
+f라는 폼에서는 전송시에 먼저 check() 함수를 실행하고,
+만일 이름을 2자 이하고 입력했을 경우, '이름은 2글자 이상이어야 합니다.'
+라는 경고창을 띄워주고, retunr false 를 만나게 되죠...
+그러면 폼은 전송되지 않는다.
+만일 이름을 2글자 이상 입력되었다면, else 문에서 return true 를 만나게 됩니다.
+그럼 폰은 전송하여 서버단이나 다른 html로 전송하게 된다.
+
+다시 정리해 드리자면
+onSubmit = "return check();" 라고 되어 있는 것은,
+폼 전송시에 check 함수를 실행 후 false가 리턴되면 폼을 전송하지 말고,
+그 외에는 폼을 전송하라 ... 이 뜻입니다.
+
+자바스크립트에서 이벤트 핸들러의 return 값의 의미
+
+대부분의 경우에 이벤트 핸들러는 return 값을 사용하여 그 이벤트의 처리를
+결정할 수 있다. 예를 들면, 폼 확인을 수행하기 위해
+Form 객체의 onSubmit 이벤트 핸들러를 사용하여
+사용자가 모두 필드를 채우지 않은 것을 발견하면 폼이 전송되지 않도록
+핸들러에서 false를 반환할 수 있다.
+일반적으로, onClick, onSubmit 이벤트 핸들러는 false를 return 해야
+해당 이벤트에 따른 기본 동작이 수행되는 것을 막을 수 있고 prevent()
+onMouseOver의 경우는 true를 return 해야
+해당 이벤트에 따른 기본 동작이 수행되는 것을 막을 수 있다.
+
+-->

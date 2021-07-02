@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>페이지 제작</title>
+<link rel="stylesheet" href="css/style5.css">
+<!-- 스타일시트 css/style.css 갖고옴  -->
+
+<script src="jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("audio").hide();
+        /* audio 태그 기본 hide */
+
+        $("p.p1").click(function(){
+            /* p태그 p1클래스  클릭시  */
+            $("audio.mu1").toggle("slow");
+            /* audio 태그의 mu1 토글  */
+        });
+        
+        $("p.p2").click(function(){
+            $("audio.mu2").toggle("slow");
+            /* p태그 p2클래스  클릭시  */
+        })
+        $("p.p3").click(function(){
+            $("audio.mu3").toggle("slow");
+             /* p태그 p3클래스  클릭시  */
+        })
+        
+
+    });
+</script>
+    
+
+</head>
+<body >
+    <!-- header -->
+    <header>
+        <div class="container">
+            <!-- 클래스 container -->
+            <div class="logo">
+                <!-- 클래스 logo -->
+               <a href="index.html"><img src="image/mouse.png"></a>
+                 <!-- img 불러오기  -->
+            </div>
+            <ul class="sidemenu">
+                <!-- sidemenu 클래스 -->
+               <li><a href="index.html">Home</a></li> 
+               <!-- 차후에 추가 할 예정 -->
+               <li><a href="#">Sitemap</a></li>
+               <!-- 차후에 추가 할 예정 -->
+            </ul>
+        </div>
+    </header>
+    <!-- //header -->
+    
+	<!-- nav --------------------------------------------- -->
+	<nav>
+		<div class="container">
+            <!-- 클래스 container -->
+			<ul class="leftMenu">
+                <!-- 클래스 leftMenu -->
+                <li class="active"><a href="index.html">Home</a></li>
+                <!-- 클래스 active Home 클릭하면 index.html로 이동 -->
+                <li><a href="galary.html">갤러리</a></li>
+                <!-- 갤러리 클릭하면 galary.html로 이동  -->
+				<li class="dropBox">
+                    <!-- 클래스 dropBox -->
+                    <a href="board.html">게시판</a> 
+                    <!-- 게시판 클릭하면 board.html 로이동  -->
+                    
+					<span class="dropmenu"> 
+                        <!-- span클래스 dropmenu 지정 -->
+                        <span><a href="board.html">자유 게시판</a></span> 
+                        <!-- 차후 추가 예정 -->
+                        <span><a href="board2.html">문의 게시판</a></span> 
+                        <!-- 차후 추가 예정 -->
+                        <span><a href="board3.html"></a>건의 게시판</a></span>
+                        <!-- 차후 추가 예정 -->
+					</span>
+				</li>
+				<li class="dropBox">
+                    <!-- li태그 클래스 dropBox -->
+                    <a href="music.html">멀티미디어</a> 
+                    <!-- 차후 추가 예정 -->
+					<span class="dropmenu"> 
+                        <!-- dropmenu 차후 추가 예정 -->
+                        <span><a href="music.html">음악듣기</a></span> 
+                        <!-- 차후 추가 예정 -->
+                        <span><a href="video.html">동영상보기</a></span> 
+                        <!-- 차후 추가 예정 -->
+					</span>
+				</li>
+                <li><a href="store.html">상품구매</a></li>
+                <!-- 차후 추가 예정 -->
+                <li><a href="comming.html">찾아오시는길</a></li>
+                <!-- 차후 추가 예정 -->
+			</ul>
+			<ul class="rightMenu">
+                <!-- ul태그 rightMenu 클래스  -->
+                <li><a href="join.html">회원가입</a></li>
+                <!-- 회원가입  클릭시 join.html 로 이동  -->
+                <li><a href="login.html">로그인</a></li>
+                <!-- 로그인 클릭시 login.html 로 이동  -->
+			</ul>
+		</div>
+	</nav>
+	<!-- //nav -->
+	
+	<!-- section3 --------------------------------------------- -->
+    <section id="section6">
+        <!-- section3 아이디  -->
+        <div class="container">
+            <!-- container 클래스 지정 -->
+            <h1>음악</h1>
+            <div class="music">
+                <!-- 음악 music -->
+               <p class="p1"> Coldplay - Viva la vida</p>
+               <!-- p1 노래  -->
+                <audio class="mu1" src="music/Coldplay-Viva la vida.mp3" controls></audio>
+                <!-- p1을 클릭하면 mu1 나옴 -->
+            </div>
+            <div class="music1">
+                <p class="p2"> Imagine Dragons - Believer</p>
+                <!-- p2 노래 -->
+                
+                <audio class="mu2" src="music/Believer.mp4" controls></audio>
+                <!-- p2 클릭하면 mu2 나옴 -->
+            </div>
+            <div class="music2">
+                <p class="p3"> Imagine Dragons - Thunder</p>
+                <!-- p3 노래이름 -->
+                <audio class="mu3" src="music/Thunder.mp4" controls></audio>
+                <!-- p3 누르면 노래나옴  -->
+            </div>
+
+
+            
+            
+        </div>
+    </section>
+    <div class="clear"></div>
+   
+   
+    <!-- footer -->
+    <footer>    
+        <div class="top">
+            <div class="container">
+                <span>다운로드</span>
+                <span>개인정보처리방침</span>
+                <span>저작권지침및신고</span>
+                <span>이메일무단수집거부</span>
+            </div>
+        </div>
+        <div class="container">
+            <strong>
+                Home : Location Log : Tag Log : Media Log : Guestbook : Admin : New Post
+            </strong>
+            <div class="copyright">
+                COPYRIGHT Ⓒ cita's BLOG IS POWERED BY DAUM / DESIGNED BY TISTORY
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    
+	
+</body>
+</html>

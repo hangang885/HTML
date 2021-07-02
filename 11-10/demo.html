@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+img{/* 이미지 사이즈 조정 */
+	width:500px; 
+	height:350px;
+}
+.mySlides{ 
+	display:none;
+	/* 박스가 생성안됨, 따라서 공간을 차지하지도 않습니다. */
+}
+a.leftbtn{position:absolute;top:45%;left:0;}
+/*  a.leftbtn 사용시 변경  */
+a.rightbtn{position:absolute;top:45%;right:0;}
+/* a.rightbtn 사용시 변경  */
+div.large{max-width:100%; position:relative; }
+/* div의 large 클래스만 적용 */
+div.small{max-width:500px;position:relative;}
+/* div의 small 클래스만 적용  */
+</style>
+<script> /* 스크립트 문 시작  */
+var slideIndex=1;
+/* 전역변수 1 선언 */
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+  /* plusDivs함수 실행시 showDivs의 slideIndex = slideIndex+n 실행  */
+}
+function showDivs(n) {
+  var i;/* 지역변수 i 선언 */
+  var x = document.getElementsByClassName("mySlides");
+  /* x에 myslides라는클래스를 getElementsByClassName 함수를 사용하여
+  모두 갖고온다.  */
+  if (n > x.length) {slideIndex = 1}    
+  /* n이 x의 배열 크기보다 클때 slideIndex=1 가된다.  */
+  if (n < 1) {slideIndex = x.length} ;
+  /* n이 1보다 작을 때 slideIndex =x 배열의 크기만큼 된다. */
+  for (i = 0; i < x.length; i++) {
+	  /* 포문 i=0 i가 x배열 크기보다 작을때 실행  */
+     x[i].style.display = "none";  
+	 /* i 의 값의 배열일때 none으로 변경하여 
+	 이미지를 안보이게함  */
+  }
+  x[slideIndex-1].style.display = "block"; 
+  /* slideIndex-1인 값을  block 해서 보이게한다. */ 
+}
+</script>
+</head>
+<body onload="showDivs(1)">
+	<!-- onload를 해서 showDivs(1)를 불러온다. -->
+<div align="center" class="large">
+	<!--위치는 센터 클래스명은 large -->
+	<h2 align="center">Manual Slides</h2>
+	<!-- 위치는 center  -->
+	<div class="small">
+		<!-- div.small 이다 -->
+		<img class="mySlides" src="picture/s1.jpg">
+		<img class="mySlides" src="picture/s2.jpg">
+		<img class="mySlides" src="picture/s3.jpg">
+		<img class="mySlides" src="picture/s4.jpg">
+		<img class="mySlides" src="picture/s5.jpg">
+		
+		<!-- 위 내용은 이미지들 -->
+
+		<a class="leftbtn" onclick="plusDivs(-1)">◀</a>
+		<!-- 왼쪽 버튼을 누를시 slideindex의 값은 변경된다.  -->
+		<a class="rightbtn" onclick="plusDivs(1)">▶</a>
+		<!-- 오른쪽 버튼을 누를 시 slideindex의 값은 변경된다. -->
+	</div>
+</div>
+</body>
+</html> 

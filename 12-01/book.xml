@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding = "utf-8"?>
+<booklist>
+<book kind="추리소설">
+<!-- kind 값을 속성으로해야하기에 이렇게 해줘야함 -->
+    <title>한강의 한강</title>  
+    <!-- 타이틀 -->
+    <author>한강</author>
+    <!-- 책 저자 -->
+    <publisher>행복 출판사</publisher>
+    <!-- 출판사 -->
+    <price>20000</price>
+    <!-- 가격  -->
+</book>
+<book kind="sf소설">
+    <title>한강의 한강1</title>  
+    <author>한강1</author>
+    <publisher>행복 출판사1</publisher>
+    <price>200001</price>
+</book>
+<book kind="판타지">
+    <title>한강의 한강2</title>  
+    <author>한강2</author>
+    <publisher>행복 출판사2</publisher>
+    <price>200002</price>
+</book>
+<book kind="액션">
+    <title>한강의 한강3</title>  
+    <author>한강3</author>
+    <publisher>행복 출판사3</publisher>
+    <price>200003</price>
+</book>
+</booklist>

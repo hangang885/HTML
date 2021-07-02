@@ -1,0 +1,24 @@
+<!-- break 문: 가장 안ㅉ고 반복문 하나만 벗어나도록 제어
+continue 문: 반복 코드 실행 중단, 다음 반복으로 점프 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>break문 </title>
+</head>
+<body>
+    <h3>1에서 얼마까지 더해야 3000을 넘는가?</h3><hr>
+    <script>
+        var i=0, sum=0;
+        while(true){
+            //무한반복
+            sum +=i;
+            if(sum>3000)
+            break; // 합이 3000보다 큼 반복문 벗어남
+            i++;
+        }
+        document.write(i+"까지 더하면 3000을 넘음 :"+sum);
+    </script>
+    
+</body>
+</html>

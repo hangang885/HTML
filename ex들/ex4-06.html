@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>&lt;@import&gt;로 외부 스타일 불러오기</title>
+    <style>
+        @import url(mystyle.css);
+    </style>
+</head>
+<body>
+    <h3>소연재</h3>
+    <hr>
+    <p>저는 체조 선수 소연재입니다. 음악을 들으면서
+        책읽기를 좋아합니다. 김치 찌개와 막국수 무척
+        좋아합니다.</p>
+</body>
+</html>
+<!-- .css 파일에 스타일 시트 저장
+웹 페이지에서 CSS3 스타일 시트 파일을 불 러 사용
+동일한 스타일 시트를 웹 페이지마다 중복 작성 해소
+웹 사이트의 전체 웹 페이지 모양의 일관성 확보
+<style> /* mystyle.css */
+    body{ background-color : linen; color:blueviolet;
+        margin-left:30px; margin-right:30px;}
+        h3{text-align:center; color:darkred;}
+    </style>
+CSS3 스타일 시트 파일을 불러오는 방법 2가지
+<link> 태그 이용
+<head>
+        <link href="mystyle.css" type="text/css" rel="stylesheet">
+</head>
+@import 이용
+<style>
+        @import url(mystyle.css);
+        /* @import url('mystyle.css'); 로 해도됨 */
+        /* @import "mystyle.css"; 로 해도됨 */
+</style>
+-->

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Meta 태그
+	문서 그 자체를 설명하는 태그를 메타 태그라 한다. -->
+	<title>미니 프로젝트</title>
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<!-- 부트스트랩이라는 사이트로 통해서css를 불러옴 -->
+	<!-- 부트 스트랩 프레임 워크 
+	어떠한 기능을 개발하기 위해서 만들어진 툴  -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<!-- 스크립트 불러오는 부분  -->
+</head>
+
+<body>
+
+	<!-- 상단 메뉴 부분 -->
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top shadow-lg">
+		<a class="navbar-brand" href="index.html">CitaCampus</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
+			<!-- data-target의 value는 버튼 클릭 시  모달로 띄우고자하는 
+				id값을 #을 붙여서 연결을 해주는 것입니다. 
+			data-toggle의 value는 모달기능을 수행하겠다는 의미입니다.
+			그리고 모달창 영역에 버튼태그의 data-dismiss 속성을 적용하면 모달을 닫게하는 기능을 적용하겠다라는 의미입니다
+			모달창은 기존의 브라우저 페이지 위에 새로운 윈도우 창이 아닌, 레이어를 까는 것을 말한다.
+			 모달창은 제거를 하지 않고도 페이지를 이동하면 자연히 사라진다. 
+			기존의 페이지와 부모-자식 관계를 갖는다. 브라우저의 새 창 제어 옵션에는 전혀 영향을 받지 않는다.-->
+			<span class="navbar-toggler-icon"></span>
+			<!--span 태그 클래스 navbar-toggler-icon 
+			네비게이션바 토글 아이콘 부분 -->
+		</button>
+		<div class="collapse navbar-collapse" id="navMenu">
+			<!-- collapse navbar-collapse 클래스명과 navMenu아이디를  가진 div
+			collapse navbar-collapse 부트스트랩 네비게이션 바를 자동 접고 열고하는부분  -->
+			<ul class="navbar-nav">
+				<!-- navbar - nav 클래스를 가진 ul태그 -->
+				<li class="nav-item">
+					<!-- nav-item 클래스를 가진 li
+					부트스트랩 네비게이션바 item 부분이라는 뜻  -->
+					<a href="board_main.html" class="nav-link">자유게시판</a>
+					<!-- nav-link 클래스를 가진 a태그
+					부트스트랩 링크 부분이라는 뜻  -->
+				</li>
+				<li class="nav-item">
+					<a href="board_main.html" class="nav-link">유머게시판</a>
+				</li>
+				<li class="nav-item">
+					<a href="board_main.html" class="nav-link">정치게시판</a>
+				</li>
+				<li class="nav-item">
+					<a href="board_main.html" class="nav-link">스포츠게시판</a>
+				</li>
+			</ul>
+
+			<ul class="navbar-nav ml-auto">
+				<!--navbar-nav 클래스 ml-auto 마진 오토라는 약어라고함  -->
+				<li class="nav-item">
+					<a href="login.html" class="nav-link">로그인</a>
+				</li>
+				<li class="nav-item">
+					<a href="join.html" class="nav-link">회원가입</a>
+				</li>
+				<li class="nav-item">
+					<a href="modify_user.html" class="nav-link">정보수정</a>
+				</li>
+				<li class="nav-item">
+					<a href="index.html" class="nav-link">로그아웃</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- 게시판 미리보기 부분 -->
+	<div class="container" style="margin-top:100px">
+		<!-- div 컨테이너 클래스 스타일 마진 탑 100px -->
+		<div class="row">
+			<div class="col-lg-6" style="margin-top:20px">
+				<!-- div 클래스 col-lg-6 은 그리드 형식이라고함  -->
+				<div class="card shadow">
+					<!--card 클래스 카드는유연하고 확장 가능한콘텐츠 컨테이너 -->
+					<div class="card-body">
+						<!-- 카드의 몸체 -->
+						<h4 class="card-title">자유게시판</h4>
+						<!-- 카드의 타이틀-->
+						<table class="table table-hover" id='board_list'>
+							<!-- 테이블과 테이블 가상선택자 / 볼더 리스트로 넣음  -->
+							<thead>
+								<tr>
+									<th class="text-center w-25">글번호</th>
+									<!-- 글 가운데 가로 사이즈 25 -->
+									<th>제목</th>
+									<th class="text-center w-25 d-none d-xl-table-cell">작성날짜</th>
+									<!-- 글 가운데 가로 25 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈 25 -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 가로 25 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈 25 -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 가로 25 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈 25 -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 가로 25 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈 25 -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 가로 25 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈 25 -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 가로 25 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+							</tbody>
+						</table>
+
+						<a href="board_main.html" class="btn btn-primary">더보기</a>
+						<!-- .btn-primary 색상, 배경 색상, 테두리 색상 등을 추가합니다. -->
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6" style="margin-top:20px">
+				<!-- div 클래스 col-lg-6 은 그리드 형식이라고함  -->
+				<div class="card shadow">
+					<div class="card-body">
+						<h4 class="card-title">유머게시판</h4>
+						<table class="table table-hover">
+							<!-- 아래의 것들은 위에 게시판과 같음  -->
+							<thead>
+								<tr>
+									<th class="text-center w-25">글번호</th>
+									<!-- 글 가운데 가로 사이즈 25 -->
+									<th>제목</th>
+									<th class="text-center w-25 d-none d-xl-table-cell">작성날짜</th>
+									<!-- 글 가운데 가로 25 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+							</tbody>
+						</table>
+
+						<a href="board_main.html" class="btn btn-primary">더보기</a>
+						<!-- .btn-primary 색상, 배경 색상, 테두리 색상 등을 추가합니다. -->
+					</div>
+				</div>
+
+			</div>
+			<div class="col-lg-6" style="margin-top:20px">
+				<div class="card shadow">
+					<div class="card-body">
+						<h4 class="card-title">정치게시판</h4>
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th class="text-center w-25">글번호</th>
+									<th>제목</th>
+									<th class="text-center w-25 d-none d-xl-table-cell">작성날짜</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+							</tbody>
+						</table>
+
+						<a href="board_main.html" class="btn btn-primary">더보기</a>
+						<!-- .btn-primary 색상, 배경 색상, 테두리 색상 등을 추가합니다. -->
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6" style="margin-top:20px">
+				<div class="card shadow">
+					<div class="card-body">
+						<h4 class="card-title">스포츠게시판</h4>
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th class="text-center w-25">글번호</th>
+									<th>제목</th>
+									<th class="text-center w-25 d-none d-xl-table-cell">작성날짜</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+								<tr>
+									<td class="text-center">5</td>
+									<!-- 글 가운데 가로 사이즈  -->
+									<th><a href='board_read.html'>제목입니다</a></th>
+									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- 글 가운데 d-none 모두 숨김 d-xl-table-cell에서만 숨김   -->
+								</tr>
+							</tbody>
+						</table>
+
+						<a href="board_main.html" class="btn btn-primary">더보기</a>
+						<!-- .btn-primary 색상, 배경 색상, 테두리 색상 등을 추가합니다. -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid bg-dark text-white" style="margin-top:50px;padding-top:30px;padding-bottom:30px">
+		<!-- 컨테이너 fluid 배경 검정 글씨 하얀색  스타일은 마진 탑 50 패딩 탑 30 패딩 바텀 30   -->
+		<div class="container">
+			<p>http://www.citacampus.co.kr</p>
+			<p>게시판 예제</p>
+			<p>사업자번호 : 000-111-222</p>
+		</div>
+	</div>
+
+</body>
+
+</html>

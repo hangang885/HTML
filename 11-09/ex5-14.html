@@ -1,0 +1,56 @@
+<!-- 텍스트나 이미지를 회전, 확대 다양한 기하학적인 모양으로 출력
+회전 각도의 단위는 deg 이며 시계방향의 회전
+div {
+    transfrom : scale(3,1);
+} 
+확대/ 축소 x축으로 3배 확대 y축으로 1배 확대
+회전, 기울임 , 이동이 있다.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>다양한 변환 사례</title>
+    <style>
+        div{
+            display: inline-block;
+            padding: 5px;
+            color: white;
+            background: olivedrab;
+        }
+        /* 변환 */
+        div#rotate{transform:  rotate(20deg);}
+        div#skew{transform: skew(0deg,-20deg);} 
+        div#traslate{transform: translate(100px);}
+        div#scale{transform: scale(3,1);}
+
+        /* 마우스를 올릴 때 추가 변환 */
+        div#rotate:hover{ transform: rotate(80deg);}
+        div#skew:hover{ transform: skew(0deg,-60deg);}
+        div#translate:hover{ transform: translate(50px,100px);}
+        div#scale:hover{transform:scale(4,2)}
+
+        /* 마우스 누를 때 추가 변환 */
+        div#scale:active{transform: scale(1,5);}
+    </style>
+</head>
+<body>
+    <h3>다양한 Transform</h3>
+    아래는 회전(rotate), 기울임(skew), 이동(translate),
+    확대/축소(scale)가 적용된 사례이다.
+    또한 마우스를 올리면 추가적 변환이 일어난다.
+    <hr>
+    <div id="rotate">rotate(20deg)</div>
+    <!-- div에 아이디가 rotate가 들어오면 transform roatate(20deg)를 실행하게 되어있기때문에 -->
+    <!-- 그 후에 마우스를 올릴때 위에 transform: rotate(80deg); 실행-->
+    <div id="skew">skew(0,-20deg)</div>
+    <!-- div에 아이디가 skew가 들어오면 transform skew(0,-20deg)를 실행하게 되었기 때문에 -->
+    <!-- 그 후에 마우스를 올릴 때 transform: skew(0deg,-60deg); 실행 -->
+    <div id="translate">translate(100px)</div>ㅁ
+    <!-- div에 아이디가 translate가 들어오면 transform translate(100px)를 실행하게 되었기 때문에 -->
+    <!-- 그 후에 마우스를 올릴 때  transform: translate(50px,100px) 실행  -->
+    <div id="scale">scale(3,1)</div>
+    <!-- div에 아이디가 scale 이 들어오면 transform scal(3,1)을 실행하게 되어있기 때문에 -->
+    <!-- 그 후에 마우스를 올릴 때 transform:scale(4,2) 실행 -->
+    <!-- 마우스를 누를 시 transform: scale(1,5); 실행 -->
+</body>
+</html>

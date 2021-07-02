@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "hangang885",
+			"path": "..\\hangang885"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

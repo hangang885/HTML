@@ -1,0 +1,50 @@
+<!-- String
+문자열을 담기 위한 객체
+String 객체는 일단 생성되면 수정 불가능
+var hello = new String("Hello");
+var res = hello.concat("Javascript");
+
+//concat() 후 hello의 문자열 변화 없음
+res 객체에는 "HelloJavascript" 저장되어 있다.
+문자열 길이
+String 객체의 length 프로퍼티 : 읽기 전용
+문자열을 배열처럼 사용
+[] 연산자를 사용하여 각 문자 접근
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String 객체의 메소드 활용 </title>
+</head>
+<body>
+    <h3>String 객체의 메소드 활용</h3><hr>
+    <script>
+        var a = new String("Boys and Girls");
+        var b = "!!";
+        document.write("a : " +a +"<br>");
+        document.write("b : "+ b+"<br><hr>");
+
+        document.write(a.charAt(0) +"<br>");
+        document.write(a.concat(b,"입니다")+"<br>");
+        document.write(a.indexOf("s")+"<br>");
+        document.write(a.indexOf("And")+"<br>");
+        document.write(a.slice(5,8) +"<br>");
+        document.write(a.substr(5,3)+"<br>");
+        document.write(a.toUpperCase()+"<br>");
+        document.write(a.replace("and","or")+"<br>");
+        document.write("   kitae   ".trim() +"<br><hr>"); // trim() 공백 제거
+
+        var sub = a.split(" ");
+        document.write("a를 빈칸으로 분리<br>");
+        for(var i=0; i<sub.length; i++)
+        document.write("sub" + i+"=" + sub[i]+"<br>");
+
+        document.write("<hr>String 메소드를 실행 후 a와 b 변화 없음<br>");
+        document.write("a : " +a+"<br>");
+        document.write("b : " +b+"<br>");
+        
+    </script>
+    
+</body>
+</html>

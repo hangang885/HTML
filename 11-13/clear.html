@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    .float_style{
+        float : left;
+    }
+    .clear_style{
+        clear: left;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>이미지 clear 연습</h1>
+    <div class="float_style"><img src="picture.png" alt=""></div>
+    <p>
+        이 글자는 float의 영향을 받아 그림을 둘러 쌉니다.
+        이 글자는 float의 영향을 받아 그림을 둘러 쌉니다.
+    </p>
+    <p class="clear_style">
+        claer가 적용된 엘리먼트는 float의 영향을 받지 않습니다.
+        claer가 적용된 엘리먼트는 float의 영향을 받지 않습니다.
+    </p>
+</body>
+</html>
+
+<!-- 여러개의 열 레이아웃 만들기
+1. 화면 설계단계에서 그룹을 나눔
+2. 그룹 중에서 한 행에 여러 개의 열이 있는 경우는 각각을 Box(상자)로 간주하여
+    Float을 지정
+3. Float 다음 줄에 출력할 행은 Clear를 지정하여 정상 위치에 표시 -->

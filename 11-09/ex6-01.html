@@ -1,0 +1,49 @@
+<!-- 웹 페이지에서 자바스크립트의 역할
+사용자의 입력 및 계산
+마우스와 키보드 입력은 오직 자바스크립트로만 가능
+계산 기능
+웹 페이지 내용 및 모양의 동적 제어
+HTML 태그의 속성, 콘텐츠 CSS 프로퍼티 값 동적 변경
+브라우저 제어
+브라우저 윈도우 크기와 모양 제어
+브라우저 제어
+브라우저 윈도우 크기와 모양제어
+새 윈도우 열기/ 닫기
+다른 웹 사이트 접속
+히스토리 제어
+웹 서버와의 통신
+웹 에플리케이션 작성
+캔버스 그래픽, 로컬/세션 스트리지 저장, 위치정보 서비스 등
+자바스크립트 코드 작성이 가능한 위치
+1. HTML 태그의 이벤트 리스너 속성에 작성
+2.<script></script>태그에 작성
+3.자바 스크립트 파일에 작성
+4. URL 부분에 작성
+
+1.HTML 태그의 이벤트 리스너에 자바스크립트 코드 작성
+이벤트 리스너 속성  = this는 현재 img태그를 가리키는 자바스크립트 키워드-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 리스너 속성에 자바스크립트 코드</title>
+    <script>
+        function change(){
+            document.getElementById("test").value='함수 호출';
+        }
+    </script>
+</head>
+<body>
+    
+   
+   <input  id="test"type="button" value="클릭" onclick='change()'>
+</body>
+</html>
+<!-- <script></script> 태그의 자바 스크립트 작성
+<head></head>나 <body></body>내 어디든
+웹 페이지 내에 여러 번 삽입 가능 -->
+<!--  <h3>마우스를 올려보세요</h3><hr>
+    <img src="media/apple.png" alt="이미지"  
+    onmouseup="this.src='media/banana.png'"
+    onmouseout="this.src='media/apple.png'"> -->

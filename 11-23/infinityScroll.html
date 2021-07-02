@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Infinity Scroll</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        // 이벤트를 연결
+        $(document).ready(function () {
+            // 문서 객체 추가 함수
+            var appendDocument = function () {
+                for (var i = 0; i < 20; i++) {
+                    // 문서 객체를 생성
+                    $('<h1>Infinity Scroll</h1>').appendTo('body');
+                }
+            };
+            // 초기에 문서 객체를 추가
+            appendDocument();
+            // 이벤트 연결
+            $(window).scroll(function () {
+                // 변수를 선언
+                var scrollHeight = $(window).scrollTop() + $(window).height();
+                var documentHeight = $(document).height();
+                // 검사
+                if (scrollHeight == documentHeight) {
+                    appendDocument();
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<!-- 
+    플러그인
+    별도의 자바스크립트 파일로 jQuery에 기능을 추가
+    라이트 박스
+    배경을 어둡게 하고 정보가 있는 사각형을 밝게 하는플러그인 -->

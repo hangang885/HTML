@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>페이지 제작</title>
+    <link rel="stylesheet" href="css\style6.css">
+</head>
+<body>
+    <!-- header----------------------------------- -->
+    <header>
+        <div class="container"> 
+            <!-- container 클래스 width: 1080px height: 100% padding : 0 20px로 설정 -->
+            <div class="logo"><img id="rabbit"src="image/mouse.png"></div>
+            <!-- header의 .logo는 float : left font-size : 24px  font-weight : 700ㅇ로 설정 -->
+            <ul class="sidemenu">
+                <!-- header의 sidemenu는 float : right로 설정 -->
+                <li><a href="index.html">Home</a></li>
+                <!-- header의 sidemenu 클래스의 자식선택자인 li는
+                width : 100px text-align : center  cusrsor: pointer font-weight: 700으로 설정 -->
+                <li><a href="#">Sitemap</a></li>
+                <!-- 위와 같음  -->
+            </ul>
+        </div>
+    </header>
+    <!--//header  -->
+    <!-- nav -------------------------------- -->
+    <nav>
+        <!-- nav 태그는
+        width : 100% height : 60px border-bottom: 1px solid #cbcbcb로 설정 -->
+        <div class="container">
+            <!-- container클래스는 
+            width : 1080px height : 100% padding : 0 20px 로 설정 -->
+            <ul class="leftMenu">
+                <!-- nav 태그의 leftMenu클래스의 자식선택자인 li는
+                width : auto padding : 0 20px height : 100% line-height : 60px text-align : center
+                cursor : pointer position : relative로 설정 -->
+                <li class="active"><a href="index.html">Home</a></li>
+           
+                <li><a href="galary.html">갤러리</a></li>
+                <li class="dropBox">
+                    <a href="board.html">게시판</a>
+                    <span class="dropmenu">
+                        <!-- nav태그의 leftMenu 클래스의 자식 li태그의 자식인 dropmenu 클래스는
+                        display : inline-block width : 150px clear : both position : absolute top : 59px
+                        left : 0 text-align : left box-shadow : 0px 2px 2px rgba(0, 0, 0, 0.4) visibility : hidden 으로 설정-->
+                        <span><a href="board.html">자유 게시판</a></span>
+                        <span><a href="board2.html">문의 게시판</a></span>
+                        <span><a href="board3.html">건의 게시판</a></span>
+                    </span>
+                </li>
+                <li class="dropBox">
+                    <a href="music.html">멀티미디어</a>
+                    <span class="dropmenu">
+                        <!-- 위에 span태그의 dropmenu 클래스와 같음  -->
+                        <span><a href="music.html">음악듣기</a></span>
+                        <span><a href="video.html">동영상보기</a></span>
+                    </span>
+                </li>
+                <li><a href="store.html">상품구매</a></li>
+                <!-- 위에 li 스타일과 동일 -->
+                <li><a href="comming.html">찾아오시는길</a></li>
+                <!-- 위에 li 스타일과 동일 -->
+            </ul>
+            <ul class="rightMenu">
+                <li><a href="join.html">회원가입</a></li>
+                <!-- nav 태그의 rightMenu클래스의 자식인 li태그는
+                width : 100px height : 36px line-height : 32px margin-top : 12px margin-left : 10px
+                padding : 0 10 px text-align : center color : #00bd39 font-weight : 700 border : 20px solid #00bd39
+                cursor : pointer border-radius : 50px 로 설정  -->
+                <li><a href="login.html">로그인
+
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+<!-- //nav -->
+<!-- section-------------- -->
+<section id="section2">
+    <div class="container">
+        <div class="loginBox">
+            <div>
+                <div class="box">
+                    <div class="logo">
+                        <h1>회원가입</h1>
+                       <h2> </h2><!-- 실선 생성을 위해 사용 -->
+                    </div>
+                    <!-- 회원가입 폼 만드는 과정  -->
+                    <form action="/login" method="post">
+<pre>
+<input type="text" name="uid" placeholder="아이디" maxlength="20">
+<input type="password" name="pw" placeholder="비밀번호" maxlength="13">
+<input type="password" name="pw" placeholder="비밀번호 재확인"maxlength="13">
+<input type="이름" name="name" placeholder="홍길동"maxlength="4">
+<input type="email" placeholder="이메일">
+<!-- 위에는 텍스트 박스 -->
+<select name="male22" class="male223">
+    <!-- 콤보박스 -->
+<option value="male" selected>성별</option>
+<option value="skawk">남자</option>
+<option value="female">여자</option>
+</select>
+<input type="tel" placeholder="전화번호">
+<!-- 전화번호 입력 기입 텍스트  -->
+</pre>
+                    <button type="submit"class ="buto">회원가입</button>
+                    </pre>
+                    </form>
+                </div>
+                <div class="box">
+                    <div class="social logo">
+                        <h1>소셜로 회원가입 하기</h1>
+                        <h2> </h2><!-- 실선 생성을 위해 사용  -->
+                        <button class="facebook">페이스북 ID로 회원가입 하기</button>
+                        <br>
+                        <button class="twitter">트윗터 ID로 회원가입 하기</button>
+                        <br>
+                        <button class="naver">네이버 ID로 회원가입 하기</button>
+                        <img id="rabbit"src="image/hangang.gif" alt="바보">
+                        <!-- 아래가 밋밋하여 광고 있는거처럼 gif 넣음  -->
+                 
+                    </div>
+                </div>
+                <div class="clear"></div>
+            
+            </div>
+        </div>
+    </div>
+</section>
+    <div class="clear"></div>
+    <!--// section -->
+    <!-- footer -->
+    <footer>
+        <!-- footer태그는 
+        width : 100% height : 115px border-top : 1px solid #cbcbcb 
+        background : white font-size : 18px 설정-->
+        <div class="top">
+            <!-- footer 태그의 top 클래스는 
+                width: 100%;
+                height: 40px;
+                border-bottom: 1px solid #cbcbcb;
+                margin-bottom: 15px;
+                로 설정 
+     -->
+            <div class="container">
+                <!-- footer의 container 클래스는     height: auto; 로 설정 -->
+                <span>다운로드</span>
+                <!-- footer의 top클래스의 후손선택자인 span은
+                height: 100%;
+                line-height: 40px;
+                padding-right: 15px;
+                cursor: pointer; 로 설정 
+                 -->
+                <span>개인정보처리방침</span>
+                <!-- 위 span 과 같음 -->
+                <span>저작권지침및신고</span>
+                <!-- 위 span 과 같음 -->
+                <span>이메일무단수집거부</span>
+                <!-- 위 span 과 같음 -->
+            </div>
+        </div>
+        <div class="container">
+            <!-- 위의 container 클래스와 같음  -->
+            <strong>
+                Home : Locatin Log : Tag Log : Media Log : Guestbook : Admin : New Post
+            </strong>
+            <div class="copyright">
+                COPYRIGHT &copy; Cita's BLOG IS POWERED BY DAUM / DESIGNED BY TISTORY
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

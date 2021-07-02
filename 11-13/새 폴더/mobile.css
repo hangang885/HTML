@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+.head {/* .head클래스 */
+	background-color: #473E37;  /* 타이틀 그림 대신 고동색으로 변경 */
+	padding: 1em;/* padding 한글자 범위 설정 */
+} 
+.pg-main {/* pg-main 클래스  */
+	padding-right: 10px;/* padding 오른쪽 10px */
+	padding-left: 10px;/* padding 왼쪽 10px */
+}
+.entries p.pcview_only{/* entries클래스의 하위 p태그의 pcview_only 클래스에 적용 */
+	display:none;  /* pcview_only로 설정된 글 화면에서 생략 */
+}
+.sidebar ul { /* 맨 왼쪽에 장식용 바 그림 */
+	/* sidebar 클래스의 하위 ul에 적용 */
+	border-left-width: 2px;/* 테두리 왼쪽 2px */
+	border-left-style: solid;/* 테두리 왼쪽 실선 설정 */
+	border-left-color: #ccc;/* 테두리 왼쪽 색 설정 */
+}
+.sidebar ul li { /* 인라인 레벨로 바꾸고 오른쪽에 장식용 바 그림 */
+	/* sidebar 클래스의 하위 ul 하위 li에 적용  */
+	display: inline;/* display inline */
+	border-right-width: 2px; /* 테두리 오른쪽 2px */
+	border-right-style: solid;/* 테두리 오른쪽 실선 */
+	border-right-color: #ccc;/* 테두리 색  */
+	padding-right: 5px;/* padding 오른쪽 5px */
+	padding-left: 5px;/* padding 왼쪽 5px */
+}
+.foot {/* foot 클래스 설정 */
+	background-color: #333;/* 배경색 */
+	border-top-width: 1px;/*테두리  위쪽 1px */
+	border-top-style: solid;/* 테두리 실선 */
+	border-top-color: #999;/* 테두리색 */
+	padding: 10px;/* padding 10px */
+	color: #FFF;/* color 색 */
+	margin-top: 10px;/* 위쪽 margin 10px */
+	text-align: center;/* 텍스트 가운데 정렬 */
+}

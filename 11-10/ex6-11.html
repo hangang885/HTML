@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>논리연산</title>
+</head>
+<body>
+    <h3>논리연산</h3><hr>
+    <script>
+        var x= true; y=false;
+
+        document.write("x=" + x +", y=" + y + "<br><br>"); /* x는 true y는 false */
+        document.write("x&&y : "+ (x&&y)+"<br>");/* x 앤드 연산 y는 false 둘다 참이 아니기에  false*/
+        document.write("x || y :"+(x||y)+"<br>");/* x or 연산 y는 둘중 하나만 참이여도 true이기에 true*/
+        document.write("!x : "+(!x)+"<br>");/* x의 not 연산은 true를 false로 바꿔서 false */
+        document.write("<hr>");
+        document.write("(3>2) && (3<4) :"+((3>2)&&(3<4)) + "<br>");/* 3은 2보다 커서 true 3은 4보다 작아서 true 그래서 true */
+        document.write("(3==-2) || (-1<0) :" + ((3==2)||(-1<0)));/* 3은 -2랑 같지 않아서 false -1은 0보다 작아서 true or연산이기에 true */
+
+    </script>
+</body>
+</html>

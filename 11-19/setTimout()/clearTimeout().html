@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout()/clearTimeout()</title>
+    <style>
+        div {
+            display : inline-block;
+            width : 7em;
+            border : 1px solid gray;
+            background-color : aliceblue;   
+        }
+        </style>
+
+
+    <script>
+        var time = new Date();
+        /* time 객체에 date를 넣는다  */
+        document.write("현재시간 : "+ time.toUTCString());
+        /* 현재시간: time을 UTC 기준으로  출력한다.  */
+        var x = time.getFullYear() + "년도"+"<br>"+(time.getMonth()+1)+"월"+time.getDate()+"일"+time.getHours()+"시"+time.getMinutes()+"분";
+        /* x에 년도 + 월 + 일 + 시 + 분을 담는다 */
+    
+    function showClock()
+    {
+        var currentDate=new Date();
+        /* currentDate에 Date를 담은 객체를 만든다 */
+        var divClock=document.getElementById("divClock");
+        /* divClock에 divClock의 값을 담는다  */
+        var apm=currentDate.getHours();
+        /* apm에 데이트를 담은 객체의 시간을 담는다. */
+        if(apm<12)
+        {
+            /* 시간이 12시 이전이면 오후 */
+            apm="오전";
+        }
+        else
+        {   /* 시간이 12시 이후이면 오후 */
+            apm="오후";
+        }
+        
+        var msg = apm +(currentDate.getHours()-12)+":";
+        /* msg에 apm 시간 + 오전 오후 해도 23시 그런식으로면 나오면 안되기에 함  */
+        msg += currentDate.getMinutes() + ":";
+        /* msg 에 분을 담음 */
+        msg += currentDate.getSeconds() + "";
+        /* msg에 초를 담음  */
+        
+        divClock.innerText=msg;
+        /* divClock으로 출력 msg값을 */
+        
+        setTimeout(showClock,1000);
+        /* 1초마다 showClock실행  */
+    }
+
+    </script>
+</head>
+<body onload="showClock()"><hr>
+<script>
+    document.write(x)
+</script>
+    <h3>div 태그에 시계 만들기</h3><hr>
+    <div id="divClock" class="clock"></div>
+</body>
+</html>

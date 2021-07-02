@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery DOM</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        //이벤트를 연경합니다.
+        $(document).ready(function(){
+            //10회 반복합니다.
+            for(var i=0; i<10;i ++){
+                //문서 객체를 생성합니다.
+            var $dynamic = $('<h1>Create Document Object +' +i+ '</h1>').css({
+                /* $변수명 == 제이쿼리의 오브젝트를 담는 다는 표시 */
+                /* 변수에 제이쿼리 값을넣음 */
+                backgroundColor : 'black',
+                color : 'red'
+            });
+            //문서 객체를 추가합니다.
+            $('body').append($dynamic);
+            /* 객체를 body 태그위치 앞부분에 추가한다 */
+            }
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!-- 
+    jQuery 문서 객체 추가 메서드
+    $(객체).prependTo(대상) = 객체를 대상의 앞부분에 추가
+    $(객체).appendTo(대상) = 객체를 대상의 뒷부분에 추가
+    $(객체).beforeTo(대상) = 객체를 대상의 앞쪽에 추가
+    $(객체).afterTo(대상) = 객체를 대상의 뒤쪽에 추가
+
+    기타 jQuery 문서 객체 추가 메서드
+   $(객체).prepend(대상) = 객체를 대상의 앞부분에 추가
+    $(객체).append(대상) = 객체를 대상의 뒷부분에 추가
+    $(객체).before(대상) = 객체를 대상의 앞쪽에 추가
+    $(객체).after(대상) = 객체를 대상의 뒤쪽에 추가
+
+    무한 스크롤
+    스크롤을 맨 아래쪽까지 내려도 무한 스크롤을 활용해 정보를 계속 제공
+
+    무한스크롤 생성 개요
+    1. 스크롤 이벤트가 발생
+    2. 전체 문서의 높이가 스크롤 높이와 웹 브라우저 창의 높이를 더한 값과
+    같은지 조건 확인 
+    3.이 조건을 충족할 때만 데이터를 추가  
+ -->

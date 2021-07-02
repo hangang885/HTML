@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 문서 작성기 만들기</title>
+    <script>
+        var win=null;
+        function showHTML(){
+            if(win == null || win.closed)
+            win = window.open("", "outWin", "width=250, height=150");
+
+            var textArea = document.getElementById("srcText");
+            win.document.open();
+            win.document.write(textArea.value);
+            win.document.close();
+        }
+
+    </script>
+</head>
+<body>
+    <h3>HTML 문서 작성기 만들기</h3><hr>
+    <p>아래에 HTML 문서를 작성하고 버튼을 클릭해 보세요.
+        새 윈도우에 HTML 문서가 출력됩니다.
+    </p>
+    <textarea id="srcText" rows="10" cols="40"></textarea><br><br>
+    <button onclick="showHTML()">HTML 문서 출력하기</button>
+    
+</body>
+</html>
+
+<!-- 문서의 동적 구성
+DOM 객체 동적 생성 : document.createElement("태그이름")
+태그 이름의 DOM 객체 생성
+var newDIV = document.createElement("div");
+newDIV.innerHTML = "새로 생성된 DIV입니다.";
+newDIV.setAttribute("id", "myDiv");
+newDIV.style.backgroundColor = "yellow";
+DOM 트리에 삽입
+부모.appendChild(DOM객체);
+부모.insertBefore(DOM객체 [, 기준자식]);
+예) 생성한 <div> 태그를 <p "id=p"> 태그의 마지막 자식으로 추가
+    var p = document.getElementById("p");
+    p.appendChild(newDiv); 
+DOM 객체의 삭제
+    var removeObj = 부모.removeChild(떼어내고자하는 자식객체);
+var myDiv = document.getElementById("myDiv");
+var parent = myDiv.parentElement;
+parent.removeChile(myDiv); //부모에서 myDiv 객체 삭제-->

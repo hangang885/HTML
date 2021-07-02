@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>onload로 이미지 크기 출력</title>
+    <script>
+        function changeImage() {
+            var sel = document.getElementById("sel");
+            /* sel 값 갖고옴 */
+            var img = document.getElementById("myImg");
+            /* img 값을 갖고옴  */
+            img.onload = function () {  // 이미지 크기 출력
+                var mySpan = document.getElementById("mySpan");
+                /* span 값을 갖고옴  */
+                mySpan.innerHTML = img.width + "x" + img.height;
+                /* span에 이미지 크기 출력하는 내용  */
+            }
+            var index = sel.selectedIndex; // 선택된 옵션 인덱스
+            img.src = sel.options[index].value; // <option>의 value 속성
+            /* 함수가 실행되서 콤보박스 값이 바뀌면 이미지도 바뀌게 된다.  */
+        }
+    </script>
+</head>
+
+<body onload="changeImage()">
+    <h3>onload로 이미지 크기 출력</h3>
+    <hr>
+    <form>
+        <select id="sel" onchange="changeImage()">
+            <option value="media/apple.png">사과
+            <option value="media/banana.png">바나나
+            <option value="media/mango.png">망고
+        </select>
+        <span id="mySpan">이미지 크기</span>
+    </form>
+    <p><img id="myImg" src="media/apple.png" alt="."></p>
+</body>
+
+</html>

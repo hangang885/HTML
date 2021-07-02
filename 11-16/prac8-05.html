@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>z-index 스타일 프로퍼티</title>
+    <style>
+        div{ position: absolute;}
+        img{ position: absolute;}
+    </style>
+
+</head>
+<body>
+    <h3>z-index 스타일 프로퍼티</h3><hr>
+    <div>
+        <img src="media/spade-A.png" alt="스페이드A" width="100" height="140">
+        <img src="media/spade-2.png" alt="스페이드2" width="100" height="140">
+        <img src="media/spade-3.png" alt="스페이드3" width="100" height="140">
+        <img src="media/spade-7.png" alt="스페이드7" width="100" height="140">
+    </div>
+    //z-index, left, top 모두 초기화
+    <script>
+        var imgArray = document.getElementsByTagName("img");
+        for(i=0; i<imgArray.length; i++){
+            var obj = imgArray[i];
+            obj.style.zIndex=i;
+            obj.style.left="10px";
+            obj.style.top = "20px";
+            obj.onclick =shuffle; // onclikck 리스너 등록
+
+        }
+        function shuffle(){
+            for(i=0; i<imgArray.length;i++){
+                var obj = imgArray[i]
+                obj.style.zIndex++;
+                obj.style.zIndex %= imgArray.length;
+            }
+        }
+    </script>    
+</body>
+</html>

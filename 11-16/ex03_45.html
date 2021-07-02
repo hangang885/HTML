@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON객체</title>
+    <script>
+        function init(){
+            var emp ={ "name":"민들레",
+            "age" : "25",
+            "tel" :"111-1111",
+            "address":"서울"
+        
+        };
+        
+        var msg ="";
+        msg += "이름:"+ emp.name+"<br>"
+        /* emp 객체의 name을 갖고옴 */
+            +"나이:" + emp.age+"<br>"
+            /* emp객체의 age를 갖고옴 */
+            + "전화:" + emp['tel']+"<br>"
+            /* emp객체의 tel을 갖고옴  */
+            + "주소:" + emp['address'] +"<br>"
+            /* emp 의 address를 갖고온다
+            객체를 갖고올때 객체명.이름 / 객채명['이름'] 두가지 방식 */
+
+            document.getElementById("result").innerHTML=msg;
+            /* result의 값을 불러와서 innerHTML을 출력한다. msg값을 넣어서 */
+        }
+    </script>
+</head>
+<body onload="init()">
+    <!-- 문서의 모든 콘텐츠(images, script, css, etc)가 로드된 후 발생하는 이벤트이다(load 이벤트라고들 한다). -->
+    <h2>JSON 표기법</h2>
+    <div id="result"></div>
+
+    
+</body>
+</html>

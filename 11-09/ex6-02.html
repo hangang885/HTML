@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>script  태그에 자바스크립트작성</title>
+    <script>
+        function over(obj){
+            /* obj는 전달받은 img 태그를 가리킴 */
+            obj.src="media/banana.png";
+        }
+        function out(obj){
+            obj.src="media/apple.png";
+        }
+
+    </script>
+</head>
+<body>
+    <h3>마우스를 올려 보세요</h3><hr>
+    <img src="media/apple.png" alt="이미지"
+    onmouseover="over(this)"
+    onmouseout="out(this)"
+    >
+    
+</body>
+</html>
+<!-- this는 현재 img 태그를 가리키는 자바스크립트 키워드
+자바스크립트 코드 파일 저장
+확장자 .js 파일에 저장
+<script> 태그 없이 자바스크립트 코드만 저장
+여러 웹 페이지에서 불러 사용
+웹 페이지마다 자바스크립트 코드 작성 중복 불필요
+<script> 태그의 src 속성으로 파일을 불러 사용
+<script src="파일이름.js">
+    //이곳에 자바스크립트 코드 추가 작성 가능
+</script> -->

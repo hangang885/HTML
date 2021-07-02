@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>익명 함수로 이벤트 리스너 작성</title>
+    <script>
+        var p;
+        function init() {//문서가 완전히 로드되었을 때 호출
+            p = document.getElementById("p");
+            p.onmouseover = function(){
+                //익명 함수
+                this.style.backgroundColor = "orchid";
+                /* p 뒷배경 변경 orchid 색  */
+            };
+            p.addEventListener("mouseout",
+            function(){
+                this.style.backgroundColor="white";});//익명 함수
+                /* p뒷 배경 변경 white */
+            
+            }
+</script>
+</head>
+<body onload="init()">
+    <!-- onloadt로 init() 함수 불러옴 -->
+    <h3>DOM 객채의 이벤트 리스너 프로퍼티에 함수 등록</h3><hr>
+    <p id="p">마우스 올리면 orchid 색으로 변경</p>
+    
+</body>
+</html>

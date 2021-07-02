@@ -1,0 +1,37 @@
+<!-- HTML 태그의 모양 변화를 시간 단위로 설정
+애니메이션 코딩 작업
+1. @keyframes 으로 HTML 태그의 시간별 모양 변화 만들기
+@keyframes textColorAnimation{
+    0% { color : blue;} 시작 시. 0% 대신 from 사용 가능
+    30% { color : green; } 30% 경과 시 까지
+    100% { color : red; } 끝까지 100% 대신 to 사용 가능
+}
+
+2. 애니메이션 스타일 시트 작성
+span {
+    animation-name : textColorAnimation;  애니메이션 코드 이름
+    animation-duration : 5;             애니메이션 1회 시간은 5초
+    animation-iteration-count : infinite; 무한 반복
+}-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>애니메이션</title>
+    <style>
+        @keyframes bomb{
+            from { font-size: 500%;}
+            to { font-size: 100%;}
+        }
+        h3{
+            animation-name: bomb;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+    <h3>애니메이션</h3>
+</body>
+</html>

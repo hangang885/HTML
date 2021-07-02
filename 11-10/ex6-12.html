@@ -1,0 +1,27 @@
+<!-- 조건 연산
+condition ? expT : exp F
+condition이 true 이면 전체 결과는 expT의 계산 값
+false 이면 expF의 계산 값
+var x=5; y=3;
+var big = (x>y) ? x : y; // (x>y)가 true이므로
+x 값 5가 big 에 대입된다. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>조건연산</title>
+</head>
+<body>
+    <h3>조건연사</h3>
+    <hr>
+    <script>
+        var a=3, b=5;
+        document.write("a=" + a+ ", b="+ b + "<br><br>");
+        document.write("두수의 차이: "+((a>b)?(a-b):(b-a)));
+        /*a가 b보다 크면 a-b 한 값을 출력 a가 b보다 작으면 b-a 한 값 출력
+        a는 3 b는 5 이기에 b-a 한 값 출력 2   */    
+        </script>
+
+    
+</body>
+</html>

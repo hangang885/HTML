@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Basic</title>
+    <script>
+        //이벤트를 연결합니다.
+        window.onload = function() {
+            /* window 브라우저의 요소들과 자바스크립트 엔진, 그리고 모든 변수를 담고 있는 객체입니다.  */
+            //문서 객체를 선택합니다.
+            var header = document.getElementById('header');
+
+            //문서 객체를 조작합니다.
+            header.style.color= 'orange';
+            header.style.background = 'red';
+            header.innerHTML = 'From JavaScript';
+        };
+    </script>
+</head>
+<body>
+    <h1 id="header">Header</h1>
+</body>
+</html>

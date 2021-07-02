@@ -1,0 +1,34 @@
+<!--  <input type="number">
+    스핀 버튼으로 정교한 값 입력
+    spin 버튼 클릭 시 0.0 ~ 10.0 사이에서 0.5씩 증감
+    
+    <input type="range">
+    슬라이드 바로 대략적인 값 입력
+    placeholder 속성에 사용자가 입력할 데이터 힌트 주기
+    이메일 주소:
+    <input type="email" placeholder="id@host">
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>편리한 숫자 입력</title>
+</head>
+<body>
+    <h3>홈 제어 시스템- 온도 조절</h3><hr>
+    <form>
+        지속시간 (0.0~10.0시간) :
+        <input type="number" min="0.0" max="10.0" 
+        step="0.5"><br><br>
+        온도 설정 : 10&deg;
+        <input type="range" min="10" max="30" list="temperatures">30&deg;
+        <detalist id="temperatures">
+            <option value="12" label="Low">
+            <option value="20" label="Medium">
+            <option value="28" label="High">
+        </detalist>
+                                                
+    </form>
+</body>
+</html>

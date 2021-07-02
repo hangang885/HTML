@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src ="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- 제이쿼리 불러옴 cdn 방식네트워크를 통해 전송 받아 연동하는 방식 -->
+
+    <script>
+        $(document).ready(function(){
+             /*  저게 무엇이냐! 자바스크립트의 onload와 같은 기능을 하는놈으로 알고 있습니다.
+    모든 html 페이지가 화면에 뿌려지고 나서 저 ready안에 서술된 이벤트들이 동작준비를 하는것이죠.
+*/
+            $("button.hide").click(function(){
+                $("p").hide();
+                /* 클릭시 p hide */
+            });
+            $("button.show").click(function(){
+                $("p").show();
+                /* 클릭시 p show() */
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>문서 준비 이벤트에는 여러 다중 이벤트를 정의할 수 있습니다.</p>
+    <p>버튼을 클릭하면 이벤트 처리를 합니다.</p>
+    <button class="hide">메시지 삭제</button>
+    <button class="show">메시지 생성</button>
+    
+</body>
+</html>

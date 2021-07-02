@@ -1,0 +1,316 @@
+/* 기본 설정 */
+*{
+    padding: 0; /* 내용과 선사이의 공간이 padding이다  */
+    margin: 0 auto; /* border와 바깥과의 여백 */
+    box-sizing: border-box; /* 박스의 크기를 수정하는 내용 */
+    list-style: none;/* 리스트 속성들의 줄임 속성*/
+}
+.container{ /* container 클래스 설정 */
+    width: 1080px; /* 가로 너비 */
+    height: 100%; /* 높이 */
+    padding: 0 20px; /* 선과 선사이의 공간 0, 20px */
+}
+li{ /* li 태그 설정  목록을 만드는 태그 */
+    float: left; /* css를 정렬하기위해 사용하는 속성 왼쪽에 띄운다 */
+}
+a{ /* a 태그 설정 하이퍼 링크를 걸어주는 태그 */
+    width: 100%; /* 가로 100% */
+    height: 100%;  /* 높이 100% */
+    color: inherit; /* 색 inherit */
+    text-decoration: none; /* 선으로 텍스트를 꾸밀 수 있게해주는 속성 */
+    display: inline-block; /*요소는 inline인데 내부는 block 처럼 표시 즉 박스모양이 inline처럼 옆으로늘어섬
+*/
+}
+body{ /* body 태그 설정 문서의 몸동을 나태는 태그  */
+    min-height: 100vh; /*요소의 최소높이 설정 */
+    position: relative; /* 레이아웃을 배치하거나 객체를 위치시킬때 사용 
+    relative는 위치 계산을 할 때 static의 원래 위치부터 계산*/
+}
+.clear{ /* clear 태그 설정 */
+    clear: both; /*오른쪽 왼쪽을 취소한다 */
+}
+/* //기본 설정 */
+
+/* header */
+header{ /* header 태그 설정  네비게이션이나 페이지에 대한 정보를 담는태그 페이지 상단에 위치 */
+    width: 100%; /* 가로 100% */
+    height: 75px; /* 세로 75px */
+    line-height: 75px;  /* 줄 간격 75px */
+    color: #00bd39; /* 색 선택  */
+}
+header .logo{ /* header의 logo 클래스 설정 */
+    float: left; /* css를 정렬하기위해  사용하는 속성 왼쪽에 띄운다 */
+    font-size: 24px; /* 폰트 사이즈 24px */
+    font-weight: 700;/* 폰트 가로 700 */
+}
+
+header .sidemenu{/* header의 sidemenu 클래스 설정 */
+    float: right;/* CSS를 정렬하기 위해 사용하는 속성을 오른쪽에 띄운다 */
+}
+header .sidemenu > li{/* header의 sidemenu클래스의 자식 선택자 설정 */
+    width: 100px; /* 가로 100px */
+    text-align: center; /* 속성을 중앙 정렬한다. */
+    cursor: pointer; /* 커서는 포인터로 바꾼다 손가락 표시 */
+    font-weight: 700;/* 폰트는가로는 700 */
+}
+header .sidemenu > li:hover{ /* header의 sidemeunu 클래스 의 자식선택자인
+    li의 hover 가상선택자만 적용 */ 
+    color: green;
+}
+/* //header */
+
+/* nav 
+주요한 네비게이션 역할을 하는 링크 그룹을 담을때 사용 */
+nav{/* nav 태그 설정 */
+    width: 100%;/* 가로 100% */
+    height: 60px; /* 세로 60px */
+    border-bottom: 1px solid #cbcbcb;/* 굴기 아래는 1px 솔리드하게 색은 cbcbcb로 */
+}
+nav .leftMenu{ /* nav 태그의 leftMenu 클래스 설정 */
+    float: left; /* css를 정렬하기 위해 사용하는 속성을 오른쪽에 띄운다 */
+    height: 100%; /* 높이 100% */
+    font-size: 19px; /* 폰트 사이즈 19px */
+    font-weight: bold; /* 폰트 가로 bold 진하게 */
+}
+nav .leftMenu > li{  /* nav태그의 leftMenu클래스의 자식선택자 li에만 적용 */                                                      
+    width: auto; /* 가로 자동 */
+    padding: 0 20px; /* 내용과 선사이에 0 20px 넣느다  */
+    height: 100%; /* 높이 100% */
+    line-height: 60px; /* 줄간격 60px*/
+    text-align: center; /* 텍스트 정렬은 가운데  */
+    cursor: pointer; /* 커서는 포인터 모양으로  */
+    position: relative; /* 레이아웃을 배치하거나 객체를 위치시킬때 사용 
+    relative는 위치 계산을 할 때 static의 원래 위치부터 계산*/
+}
+nav .leftMenu > li:hover > .dropmenu{/* 
+    nav 태그의 leftMenu클래스의 자식 li:hover의 자식인 dropmenu클래스에만 적용 */
+    visibility: visible; /* 요소가 보여질지에 결정하는 속성 visible은 기본값으로 요소 보여줌 */
+}
+nav .leftMenu > li > .dropmenu{
+    /* nav태그의 leftMenu 클래스의 자식li의 자식의 dropmenu클래스에게만 적용 */
+    display: inline-block; /* 요소를 인라인 블록(두 가지 특징을 동시에 가진 형태)로 보여줌 */ 
+    width: 150px;
+    clear: both; /*오른쪽 하단을 취소한다 */
+    position: absolute; /* 원래 위치와 상관없이 위치 지정 가능 */
+    top: 59px;/* 탑 59px */
+    left: 0; /* 좌측 0 */
+    text-align: left; /* 텍스트 정렬 왼쪽 */
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4); /* 박스에 그림자 속성 */
+    visibility: hidden; /* 요소를 보여주지 않는다. */
+}
+nav .leftMenu > li > .dropmenu > span{
+    /* nav 태그의 leftMenu 클래스의 자식인 li자식의 dropmenu 자식의 span태그에만 적용  */
+    width: 100%;
+    display: inline-block; /* 요소를 인라인 블록(두 가지 특징을 동시에 가진 형태)로 보여줌 */
+    padding-left: 20px; /* 안쪽 여백 20px */
+    background: #00bd39;
+    color: white;
+    font-weight: 400;
+}
+nav .leftMenu > li > .dropmenu > span:hover{
+    /* nav태그의 leftMenu의 자식인 li 자식의 dropmenu 클래스 자식의 span의 가상 선택자에게만 적용  */
+    font-weight: 700;
+}
+
+nav .leftMenu > li:hover{
+    /* nav 태그의 leftMenu의 자식인 li태그의 hover 가상선택자에게만 적용  */
+    color: #00bd39;
+    font-weight: 700;
+    border-bottom: 3px solid #00bd39;
+}
+nav .leftMenu > li.active{
+    /* nav태그의 leftMenu 의 자식인 li태그의 active  */
+    color: #00bd39;
+    font-weight: 700;
+    border-bottom: 3px solid #00bd39; /* 테두리 아래는 3px solid 저색으로  */
+}
+
+nav .rightMenu{
+    /* nav 태그의 rightMenu 클래스에 적용  */
+    float: right; /* 속성을 오른쪽에 띄운다 */
+}
+nav .rightMenu > li{
+    /* nav태그의 rightMenu 클래스의 자식인 li 태그에게만 실행  */
+    width: 100px;
+    height: 36px;
+    line-height: 32px;
+    margin-top: 12px; /* 바깥 위쪽 여백 12px */
+    margin-left: 10px;/* 바깥 왼쪽 여백 10px */
+
+    padding: 0 10px; /* 선과 선사이 0 10px */
+    text-align: center; /* 텍스트 정렬 가운데 */
+    
+    color: #00bd39;
+    font-weight: 700;
+    border: 2px solid #00bd39;
+    cursor: pointer;
+    border-radius: 50px;
+}
+nav .rightMenu > li:hover, nav .rightMenu > li.active{
+    /* nav태그의 rightMenu클래스의 자식인 li :hover 가상선택자와 nav태그의 rightMenu의 자식인 li태그의 active 클래스에만 적용  */
+    color: white;
+    background: #00bd39;
+}
+/* //nav */
+
+/* #section1 */
+section{
+    /*  HTML 문서의 독립적인 구획을 나타내며
+    더 적합안 의미를 가진 요소가 없을때 사용  */
+    width: 100%;
+    height: 650px;
+    padding: 30px 0;
+    background: #fafafa;
+    font-size: 15px;
+}
+/* #section2 */
+
+
+.facebook{/* 페이스북 버튼 설정 */
+    width: 450px;
+    height: 30px;
+    background-color: #3b5998;
+    color: white;
+    margin-bottom: 10px;
+/* 마진 아래 범위는 10px로  */
+    border: 0px;
+    /* 표 테두리선 0으로 없이만듬  */
+    
+    
+    
+}
+.twitter{/* 트위터 버튼 설정  */
+ 
+    width: 450px;
+    height: 30px;
+    color: white;
+    background-color: #00acee;
+    margin-bottom: 10px;
+  /* 마진 아래 범위는 10px로  */
+  border: 0px;
+  /* 표 테두리선 0으로 없이만듬  */
+}
+.naver{/* 네이버 버튼 설정  */
+
+    width: 450px;
+    height: 30px;
+    color: white;
+    background-color: #1ec800;
+    margin-bottom: 10px;
+ /* 마진 아래 범위는 10px로  */
+ border: 0px;
+ /* 표 테두리선 0으로 없이만듬  */
+    
+}
+input{/* input 태그들 설정 */
+    width: 450px;
+    height: 30px;
+    margin-bottom: 10px;
+    /* 마진 아래 범위는 10px로  */
+}
+.buto{/* 로그인 버튼에 대한 설정 */
+    width: 450px;
+    height: 30px;
+    color: white;
+    /* 폰트색 설정 */
+    background-color: #1ec800;
+    /* 뒷 배경 색 설정 */
+    margin-bottom: 10px;
+    /* 마진 아래 범위는 10px */
+    border: 0px;
+    /* 테두리는 0px로 안보이게  */
+    
+}
+.find{/* 아이디 비밀번호 찾기 버튼 설정 */
+    width: 495px;
+    height: 30px;
+    color: green;
+    /* 글씨 색 설정 그린으로  */
+ border: 1px solid green;
+ /* 테두리 1px로 실선에 색은 초록색 */
+    background-color: white;
+    /* 뒷 배경은 하얀색  */
+}
+.box{/* 로그인 / 소셜로그인하기 설정 */
+    float: left;
+    /* 박스 정렬은 왼쪽부터 채움  */
+    width: 510px;
+    padding: 30px;
+    /* padding 범위는 30px */
+    border: 1px solid gray ;
+    /* 테두리는 1 px에 실선에 회색*/
+}
+.alert{ 
+    /* 도움이 필요하신가요 박스 설정 */
+    padding:11px;
+    /* padding은 11px로 설정 */
+    border: 1px solid gray ;
+    /* 테두리는 1px에 실선에 gray 색 */
+    display: inline-block;
+    /* display는 inline-block으로 설정 */
+     width: 1020px;
+     /* 가로 길이  */
+  
+}
+.box h1{/*로그인 / 소셜로그인 글씨와 h2 실선의 여백을 주기위해 만듬  */
+    margin-bottom: 5%;
+}
+.box h2{/* 로그인/ 소셜로그인 밑에 실선을 만들기위해 설정 */
+    margin-top: 1%;
+    /* 위로 범위 1% */
+    margin-bottom: 10%;
+    /* 아래 범위 10% */
+    border-bottom: 3px solid black;
+    /* 테두리는 3px에 실선 검정색  */
+
+}
+.alert h1{/* 도움이 필요하신가요 설장 */
+    
+    margin-top: 10px;
+    /* 위 범위 10px */
+    margin-bottom: 2%;
+    /* 아래 범위 2% */
+}
+div .clear{
+    clear: both;
+    /* clear both로 위에서 왼쪽 정렬한것을 취소함  */
+}
+/* footer */
+footer{
+    /* 요소가 포함되어있는 문서나 섹션에[ 대한 아래와 같은
+    정보를 포함한다.
+    저자정보, 저작권정보,연락쳐, 사이트맵, 페이지 맨위로 되돌아갈 수있는 top버튼 */
+    width: 100%;
+    height: 115px;
+    border-top: 1px solid #cbcbcb;
+    background: white;
+    font-size: 18px;
+}
+footer > .container{
+    /* footer 태그의 자식인 container 클래스에만 적용  */
+    height: auto;
+}
+footer .top{
+    /* footer 태그의 top클래스에만 적용 */
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #cbcbcb;
+    margin-bottom: 15px;
+}
+footer .top span{
+    /* footer태그의 top클래스의 후손선택자인 span에만 적용  */
+    height: 100%;
+    line-height: 40px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+footer .top span:hover{
+    /* footer 태그의 top클래스의 후손선택자인 span의 가상선택자 hover에게만 적용 */
+    font-weight: 700;
+}
+footer .copyright{
+    /* footer 태그의 copyright 클래스에게만 적용 */
+    margin-top: 5px;
+}
+/* //footer */
+

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>페이지 제작</title>
+<link rel="stylesheet" href="css/style5.css">
+<!-- 스타일시트 css/style.css 갖고옴  -->
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <!-- 클래스 container -->
+            <div class="logo">
+                <!-- 클래스 logo -->
+               <a href="index.html"><img src="image/mouse.png"></a>
+                 <!-- img 불러오기  -->
+            </div>
+            <ul class="sidemenu">
+                <!-- sidemenu 클래스 -->
+               <li><a href="index.html">Home</a></li> 
+               <!-- 차후에 추가 할 예정 -->
+               <li><a href="#">Sitemap</a></li>
+               <!-- 차후에 추가 할 예정 -->
+            </ul>
+        </div>
+    </header>
+    <!-- //header -->
+    
+	<!-- nav --------------------------------------------- -->
+	<nav>
+		<div class="container">
+            <!-- 클래스 container -->
+			<ul class="leftMenu">
+                <!-- 클래스 leftMenu -->
+                <li class="active"><a href="index.html">Home</a></li>
+                <!-- 클래스 active Home 클릭하면 index.html로 이동 -->
+                <li><a href="galary.html">갤러리</a></li>
+                <!-- 갤러리 클릭하면 galary.html로 이동  -->
+				<li class="dropBox">
+                    <!-- 클래스 dropBox -->
+                    <a href="board.html">게시판</a> 
+                    <!-- 게시판 클릭하면 board.html 로이동  -->
+                    
+					<span class="dropmenu"> 
+                        <!-- span클래스 dropmenu 지정 -->
+                        <span><a href="board.html">자유 게시판</a></span> 
+                        <!-- 차후 추가 예정 -->
+                        <span><a href="board2.html">문의 게시판</a></span> 
+                        <!-- 차후 추가 예정 -->
+                        <span><a href="board3.html"></a>건의 게시판</a></span>
+                        <!-- 차후 추가 예정 -->
+					</span>
+				</li>
+				<li class="dropBox">
+                    <!-- li태그 클래스 dropBox -->
+                    <a href="music.html">멀티미디어</a> 
+                    <!-- 차후 추가 예정 -->
+					<span class="dropmenu"> 
+                        <!-- dropmenu 차후 추가 예정 -->
+                        <span><a href="music.html">음악듣기</a></span> 
+                        <!-- 차후 추가 예정 -->
+                        <span><a href="video.html">동영상보기</a></span> 
+                        <!-- 차후 추가 예정 -->
+					</span>
+				</li>
+                <li><a href="store.html">상품구매</a></li>
+                <!-- 차후 추가 예정 -->
+                <li><a href="comming.html">찾아오시는길</a></li>
+                <!-- 차후 추가 예정 -->
+			</ul>
+			<ul class="rightMenu">
+                <!-- ul태그 rightMenu 클래스  -->
+                <li><a href="join.html">회원가입</a></li>
+                <!-- 회원가입  클릭시 join.html 로 이동  -->
+                <li><a href="login.html">로그인</a></li>
+                <!-- 로그인 클릭시 login.html 로 이동  -->
+			</ul>
+		</div>
+	</nav>
+	<!-- //nav -->
+	
+	<!-- section3 --------------------------------------------- -->
+    <section id="section3">
+        <!-- section3 아이디  -->
+        <div class="container">
+            <!-- container 클래스 지정 -->
+            <h1>갤러리</h1>
+            <div class="box">
+                <div class="image_box">
+                    <img src="image/s1.jpg" alt="" onclick="showDivs(1)">
+                    <!-- 클릭시 showDivs 함수 실행  -->
+                </div>
+                <div class="des">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, nam.
+                </div>
+            </div>
+            <div class="box">
+                <div class="image_box">
+                    <img src="image/s2.jpg" alt="" onclick="showDivs(2)">
+                    <!-- 클릭시 showDivs(2) 실행  -->
+                </div>
+                <div class="des">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, numquam.
+                </div>
+            </div>
+            <div class="box">
+                <div class="image_box">
+                    <img src="image/s3.jpg" alt="" onclick="showDivs(3)">
+                    <!-- 클릭시 showDivs(3) 실행 -->
+                </div>
+                <div class="des">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, fugit!
+                </div>
+            </div>
+            <div class="box">
+                <div class="image_box">
+                    <img src="image/s4.jpg" alt="" onclick="showDivs(4)">
+                    <!-- 클릭시 showDivs(4) 실행 -->
+                </div>
+                <div class="des">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, sequi?
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="clear"></div>
+    <!-- //section3 -->
+    
+    <div id="back"></div>
+    <div id="popup">
+        <div class="title">SandArt Popup <span class="close" onclick="closePopup()">&times;</span></div>
+        <!-- close 를 누를시 closePopup 함수 실행 -->
+         <div align="center" class="large">
+             <!-- 가운데 정렬 -->
+			<div class="small">
+				<img class="mySlides" src="image/s1.jpg">
+				<img class="mySlides" src="image/s2.jpg">
+				<img class="mySlides" src="image/s3.jpg">
+				<img class="mySlides" src="image/s4.jpg">
+				
+                <a class="leftbtn" onclick="plusDivs(-1)">◀</a>
+                <!-- 왼쪽 버튼 누를시 plusDivs(-1 ) 실행 -->
+                <a class="rightbtn" onclick="plusDivs(1)">▶</a>
+                <!-- 오른쪽 버튼 누를 시 plusDivs(1) 실행  -->
+			</div>
+		</div>
+    </div>
+    
+    <!-- footer -->
+    <footer>    
+        <div class="top">
+            <div class="container">
+                <span>다운로드</span>
+                <span>개인정보처리방침</span>
+                <span>저작권지침및신고</span>
+                <span>이메일무단수집거부</span>
+            </div>
+        </div>
+        <div class="container">
+            <strong>
+                Home : Location Log : Tag Log : Media Log : Guestbook : Admin : New Post
+            </strong>
+            <div class="copyright">
+                COPYRIGHT Ⓒ cita's BLOG IS POWERED BY DAUM / DESIGNED BY TISTORY
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    
+	<script>
+        var slideIndex=0;
+        /* 이미지 슬라이드 인덱스 0 부터 */
+		function plusDivs(n) {
+          showDivs(slideIndex += n);
+          /* n값이 들어오면 슬라이드 인덱스값 변경 
+          둘은 최소값 최대값이 정해지지 않아 무제한으로 왼쪽으로 쭉갈수있고 오른쪽으로 쭉갈수 있음  */
+		}
+		function showDivs(n) {
+		  var i;
+          slideIndex = n;
+          /* n값이 슬라이드 인덱스 가된다.  */
+          var x = document.getElementsByClassName("mySlides");
+          /* mySlides클래스 값을 x 에 넣는다.*/
+          if (n > x.length) {slideIndex = 1}    
+          /* n이 x보다 클 경우 슬라이드 인덱스는 1로 변경
+          이미지가 4개니까 4보다 커지면 5는 이미지가 없기에
+          1로 바꿔서 이미지가 연속적으로 진행  */
+          if (n < 1) {slideIndex = x.length} ;
+          /* n이 1보다 작을 경우 슬라이드 인덱스가 x 로 변경
+          이미지가 4개인데 왼쪽 버튼을 게속눌러 0이됬을때
+          이미지가 없어지면 안되니까 마지막 번째인 4번째로 변경  */
+		  for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";  
+             /* 평소에는 이미지팝업이 켜있찌만 none으로 설정되어 나오지 않음 */
+		  }
+          x[slideIndex-1].style.display = "block";  
+          /* showDivs가 실행되면 이미지가 block으로 변경되여
+          이미지가 나옴  */
+          document.getElementById("back").style.display = "block";
+          /* 실행시 block으로 변경되어 확인 가능 */
+          document.getElementById("popup").style.display = "block"; 
+          /* 실행시 block으로 변경되어 확인 가능  */
+		} 
+		
+		function closePopup(){
+            document.getElementById("back").style.display = "none";
+            /* closePopup을 클릭시 none으로 다시 숨어짐 */
+            document.getElementById("popup").style.display = "none";
+            /* closePopup을 클릭스 none으로 다시 숨어짐 */
+		}
+	</script>
+</body>
+</html>

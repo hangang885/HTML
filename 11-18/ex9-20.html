@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>키 이벤트</title>
+<script>
+function whatKeyDown(e) {
+	var str = "";
+	var div = document.getElementById("div");
+	div.innerHTML = ""; // div 객체 내용을 지운다.
+	if(e.altKey) {
+		if(e.altLeft) 
+			str += "왼쪽 Alt 키가 눌러졌습니다";
+			/* 왼쪽 알트 눌리면 나옴*/
+		else
+			str += "오른쪽 Alt 키가 눌러졌습니다.";
+			/* 오른쪽 알트 누르면 나옴 */
+		str += "<br>";
+	}
+	if(e.shiftKey) {
+		if(e.shiftLeft) 
+			str += "왼쪽 Shift 키가 눌러졌습니다.";
+			/* 왼쪽 쉬프트 키눌리면나옴  */
+		else
+			str += "오른쪽 Shift 키가 눌러졌습니다.";
+			/* 오른쪽 쉬프트 키 눌리면 나옴 */
+		str += "<br>";
+	}
+	if(e.ctrlKey) {
+		if(e.ctrlLeft) 
+			str += "왼쪽 Ctrl 키가 눌러졌습니다.";
+			/* 왼쪽 컨트롤 키 눌리면 나옴 */
+		else
+			str += "오른쪽 Ctrl 키가 눌러졌습니다";
+			/* 오른쪽 컨트롤 키 나옴 */
+		str += "<br>";
+	}	
+	str += String.fromCharCode(e.keyCode) + "키가 눌려졌습니다."
+	div.innerHTML = str; // div 객체에 html 문서 조각을 출력한다.
+}
+</script></head>
+<body>
+<h3>키 리스너와 키 이벤트 객체의 프로퍼티</h3><hr>
+텍스트 창에 키를 눌러 보세요. Alt, Shift, Ctrl 키도 가능합니다.<br>
+<input type="text" id="text" onkeydown="whatKeyDown(event)">
+<div id="div" style="background-color:skyblue; width:250px; height:50px">
+</div>
+</body></html>
+<!-- onreset
+reset 버튼(<input type="rest">) 클릭 시
+false를 리턴하면 폼이 초기화되지 않음
+
+onsubmit
+submit(<input type="rest">) 버튼 클릭 시
+false를 리턴하면 폼 전송하지 않음
+
+리스너 작성
+<form onreset="..." onsubmit="..."> -->

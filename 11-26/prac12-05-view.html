@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>선택한 도시와 음식 보여주기</title>
+    <style>
+        div{
+            display: inline-block;
+            width: 200px;
+            border: 1px solid yellowgreen;
+            padding-left: 10px;
+
+        }
+    </style>
+    <script>
+        window.addEventListener("storage",StorageEventListener,false);
+        /* storage 이벤트 사용하고 StorageEventListener 을 받는 객체 false 캡쳐단계 */
+
+        function StorageEventListener(e){ //웹 스토로자에 변화가 생길때 호출
+            show(); //변화된 스토로지 출력
+        }
+        function show(){
+            if(!window.localStorage){
+                alert("지원하지 않습니다.");
+                return;
+            }
+            var obj = document.getElementById("msg");
+            /* msg의 값을 받아옴 */
+            if(localStorage.length !=0)
+            obj.innerHTML="";
+            {
+            for(var i=0; i<localStorage.length;i++){
+                
+                var key = localStorage.key(i);
+                /* 로컬스토로지의 keyi번쨰 값을 key 넣음*/
+                var val = localStorage.getItem(key);
+                /* key값의 아이템을 갖고와서 val에 넣음 */
+                if(i== localStorage.length-1)
+                /* 마지막꺼 br안할려구 굳이 이렇게 만듬 */
+                obj.innerHTML +=(key + "=" +val);
+                else
+                obj.innerHTML += (key + "=" +val) + "<br>";
+                /* 마지막꺼 아니면 br하기  */
+            }
+            
+        }
+        
+        }
+    </script>
+</head>
+<body onload="show()"> 
+    <h3>선택한 도시와 음식 보여주기</h3>
+    <hr>
+    <div id="msg">
+        아무것도 선택하지 않았습니다.
+    </div>
+</body>
+</html>

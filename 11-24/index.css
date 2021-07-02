@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+.cover_cover {
+	position :relative;
+	width : 100%;
+	height : 1200px;
+}
+
+.cover>div {
+	position : absolute;
+	top : -210px;
+	width : 100%;
+	height : 1200px;
+}
+
+.cover>div:nth-child(1) {
+	background-image : url(../images/slide_image1.jpg);
+}
+
+.cover>div:nth-child(2) {
+	background-image : url(../images/slide_image2.jpg);
+}
+
+.cover>div:nth-child(3) {
+	background-image : url(../images/slide_image3.jpg);
+}
+
+.bullet {
+	position : absolute;
+	width : 10px;
+	top : 28%;
+	right : 50px;
+}
+
+.bullet>li {
+	width : 10px;
+	height : 10px;
+	border-radius : 5px;
+	background-color : #fff;
+	float : left;
+	margin-bottom : 25px;
+	cursor : pointer;
+}
+
+.bullet>li:hover {
+	background-color : #8dc63f;
+}
+
+.hover {
+	background-color : #8dc63f !important;
+}
+
+.food {
+	position : relative;
+	width : 1400px;
+	height : 1400px;
+	border : 1px solid blue;
+}
+
+.sandwich {
+	position : absolute;
+	right : 100px;
+	top : 0;
+	width : 800px;
+	height : 600px;
+	z-index : 30;
+}
+
+.smoothie_bowl {
+	position : absolute;
+	left : 0;
+	bottom : 200px;
+	width : 600px;
+	height : 700px;
+	z-index : 50;
+}
+
+.paste {
+	position : absolute;
+	right : 0;
+	top : 300px;
+	width : 900px;
+	height : 1200px;
+	z-index : 29;
+}
+
+.organic>p:nth-child(5) {
+	position : relative;
+	width : 100%;
+	height : 700px;
+	background : url(../images/main_image4.jpg) no-repeat;
+	background-attachment : fixed;
+	background-size : cover;
+	border : 1px solid red;
+}
+
+.mid_1 {
+	position : relative;
+	width : 1400px;
+	height : 700px;
+	top : 100px;
+}
+
+.mid_1:after {
+	content : "";
+	display : block;
+	clear : both;
+}
+
+/*
+.mid_1>p>span {
+	width : 200px;
+	height : 50px;
+	background : url(../images/logo4.png) no-repeat;
+	float : left;
+	margin-top : 5px;
+}
+*/
+.mid_1>p {
+	width : 1400px;
+	height : 80px;
+	line-height : 80px;
+	text-align : center;
+	font-size : 50px;
+	float : left;
+}
+
+.mid_1>div>ul {
+	position : absolute;
+	width : 1400px;
+	height : 600px;
+	margin : 130px 50px;
+}
+
+.mid_1>div>ul>li {
+	width : 400px;
+	height : 440px;
+	float : left;
+}
+
+.mid_1>div>ul>li:nth-child(2) {
+	margin : 0 50px;
+}
+
+.mid_1 h3 {
+	margin-top : 40px;
+	font-size : 1.5em;
+}
+
+.mid_1 p {
+	margin-top : 10px;
+}

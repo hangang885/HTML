@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#box').css({
+                width: 100,
+                height: 100,
+                background: 'orange'
+            // 메서드 체이닝으로 이벤트 추가
+            }).on('click', function(){
+                $(this).css('background', 'red');
+                /* 클릭시 box아이디를 가진애가 빨강*/
+            }).on('mouseenter', function(){
+                $(this).css('background', 'blue');
+                /* 마우스가 올라가면 가진애가 블루 */
+            }).on('mouseleave', function(){
+                $(this).css('background', 'orange');
+                /* 마우스가 나가면 가진애가 오렌지 */
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
